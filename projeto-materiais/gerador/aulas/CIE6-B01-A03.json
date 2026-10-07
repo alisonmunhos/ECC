@@ -1,0 +1,144 @@
+{
+  "codigo": "CIE6-B01-A03",
+  "codigo_antigo": "EF06-CIE-A03",
+  "componente": "Ciências",
+  "serie": "6º ano",
+  "bloco": { "codigo": "B01", "nome": "Matéria e misturas", "posicao": "Aula 3 de 7" },
+  "tema": "Misturas e fases",
+  "subtitulo": "Quantas partes você enxerga?",
+  "duracao": "50 min (1 período) · extensível para 2 períodos com o Caminho B",
+  "bncc": [
+    {
+      "codigo": "EF06CI01",
+      "texto": "Classificar como homogênea ou heterogênea a mistura de dois ou mais materiais (água e sal, água e óleo, água e areia etc.)."
+    }
+  ],
+  "competencias_gerais": ["CG2 · Pensamento científico, crítico e criativo"],
+  "expectativas": {
+    "saber": "Diferenciar mistura homogênea (uma fase) de mistura heterogênea (duas ou mais fases).",
+    "fazer": "Observar misturas do cotidiano, contar as fases visíveis e classificá-las.",
+    "ser": "Valorizar a observação cuidadosa e o registro como forma de chegar a conclusões."
+  },
+  "fundamentos": [
+    "Uma mistura é formada por dois ou mais materiais diferentes. Chamamos de fase cada porção da mistura que tem aspecto uniforme, ou seja, que parece igual em todos os pontos quando observamos.",
+    "Na mistura homogênea enxergamos uma única fase: água com sal dissolvido, água com açúcar, vinagre, ar. Na mistura heterogênea enxergamos duas ou mais fases: água e óleo, água e areia, granito (três fases).",
+    "Número de fases não é o mesmo que número de materiais. Água + óleo + areia formam 3 fases. Já água + sal + açúcar, bem dissolvidos, formam 1 fase só.",
+    "A classificação depende do limite de dissolução: se colocarmos sal demais, o excesso se deposita no fundo e a mistura passa a ter 2 fases."
+  ],
+  "roteiro": [
+    {
+      "tempo": "0–10 min",
+      "nome": "Gancho",
+      "passos": [
+        "Mostre dois copos transparentes com água. Dissolva uma colher de sal em um e coloque óleo no outro.",
+        "Pergunte: \"Para onde foi o sal? E por que o óleo não sumiu?\" Deixe a turma levantar hipóteses sem corrigir."
+      ]
+    },
+    {
+      "tempo": "10–25 min",
+      "nome": "Construção",
+      "passos": [
+        "Escreva na lousa: MISTURA = 2 ou mais materiais. FASE = cada parte com aspecto igual.",
+        "Volte aos copos e conte as fases com a turma: copo do sal = 1 fase (homogênea); copo do óleo = 2 fases (heterogênea).",
+        "Peça 3 exemplos de casa para cada tipo e anote no quadro."
+      ]
+    },
+    {
+      "tempo": "25–45 min",
+      "nome": "Prática",
+      "passos": [
+        "Distribua as folhas do aluno: a versão convencional e a versão adaptada trabalham o mesmo conteúdo e podem ser usadas na mesma aula.",
+        "Escolha um dos caminhos abaixo conforme o tempo e a turma."
+      ]
+    },
+    {
+      "tempo": "45–50 min",
+      "nome": "Fechamento",
+      "passos": [
+        "Pergunta de saída (ver avaliação). Retome as hipóteses do gancho: o sal não sumiu, ele está dissolvido na água."
+      ]
+    }
+  ],
+  "caminhos": [
+    {
+      "letra": "A",
+      "nome": "Expositivo ativo",
+      "quando": "Pouco tempo ou turma numerosa.",
+      "como": "Demonstração com os dois copos na frente da sala, registro no caderno (Missão do caderno) e questões da folha convencional."
+    },
+    {
+      "letra": "B",
+      "nome": "Laboratório de copos",
+      "quando": "Quando houver 2 períodos ou espaço para grupos.",
+      "como": "Grupos de 4 preparam 4 copos (água + sal, água + óleo, água + areia, água + açúcar), escrevem uma previsão antes de misturar, observam e preenchem a tabela da folha convencional."
+    },
+    {
+      "letra": "C",
+      "nome": "Prática visual",
+      "quando": "Turma com muitos níveis diferentes ou como retomada.",
+      "como": "Toda a turma usa a folha adaptada: pinta as fases, marca com X e depois compara com um colega quantas fases encontrou."
+    },
+    {
+      "letra": "D",
+      "nome": "Desafio do cotidiano",
+      "quando": "Para fechar o bloco ou como tarefa de casa.",
+      "como": "Cartões com fotos de misturas (café coado, salada, suco com polpa, granito, ar, água com gás) para classificar em duas colunas e justificar."
+    }
+  ],
+  "avaliacao": {
+    "pergunta": "Um copo tem água, óleo e areia. Quantas fases ele tem? A mistura é homogênea ou heterogênea? Explique.",
+    "rubrica": {
+      "pleno": "Responde 3 fases, classifica como heterogênea e explica que cada parte tem aspecto diferente.",
+      "parcial": "Classifica corretamente como heterogênea, mas erra ou não justifica o número de fases.",
+      "atencao": "Confunde número de materiais com número de fases ou diz que é homogênea porque está tudo no mesmo copo."
+    }
+  },
+  "dica": {
+    "erro": "Achar que o sal \"sumiu\" ou que toda mistura transparente é água pura.",
+    "como_corrigir": "Prove (com cuidado e higiene) ou deixe a água evaporar num pires ao sol: o sal reaparece. Ele estava ali o tempo todo, dissolvido."
+  },
+  "adaptacoes": [
+    { "perfil": "TEA", "texto": "Antecipe a sequência da aula em cartões. Use a folha adaptada com a imagem e apenas 2 exemplos (sal e óleo)." },
+    { "perfil": "TDAH", "texto": "Dê um copo por vez para observar. Ofereça a função de ajudante na demonstração." },
+    { "perfil": "Deficiência intelectual", "texto": "Foque em \"1 parte\" ou \"2 partes\". Dispense os termos homogênea e heterogênea na produção escrita; aceite apontar ou pintar." },
+    { "perfil": "Deficiência visual", "texto": "Use copos com materiais de texturas diferentes para tocar (areia, óleo). Descreva tudo em voz alta e amplie a folha para A3." },
+    { "perfil": "Deficiência auditiva", "texto": "Escreva cada instrução na lousa antes de falar. Use a imagem da folha adaptada como apoio visual." },
+    { "perfil": "Dislexia", "texto": "Leia as questões em voz alta. Aceite respostas orais ou desenhadas." }
+  ],
+  "materiais": ["4 copos transparentes", "Água", "Sal", "Açúcar", "Óleo de cozinha", "Areia", "Colher", "Lápis de cor (azul e amarelo)"],
+  "gabarito": [
+    "1. Homogênea: tem uma única fase.",
+    "2. a) homogênea, 1 fase · b) heterogênea, 2 fases · c) heterogênea, 2 fases · d) homogênea, 1 fase.",
+    "3. 3 fases (água, óleo e areia); heterogênea.",
+    "4. Não. O excesso de sal fica no fundo e a mistura passa a ter 2 fases."
+  ],
+  "aluno_convencional": {
+    "resumo": [
+      "Mistura é a junção de dois ou mais materiais.",
+      "Fase é cada parte da mistura que tem o mesmo aspecto em todos os pontos.",
+      "Mistura homogênea: tem 1 fase. Exemplo: água com sal dissolvido.",
+      "Mistura heterogênea: tem 2 ou mais fases. Exemplo: água e óleo."
+    ],
+    "missao": "Transforme seu caderno em uma bancada de laboratório. Desenhe dois copos: no primeiro, água com sal, com uma seta escrita \"Mistura homogênea: 1 fase\". No segundo, água embaixo e óleo em cima, com setas indicando \"Mistura heterogênea: 2 fases\".",
+    "questoes": [
+      "Explique, com suas palavras, o que é uma mistura homogênea.",
+      "Classifique cada mistura e indique o número de fases: a) água e açúcar dissolvido; b) água e areia; c) água e óleo; d) ar.",
+      "Um copo tem água, óleo e areia. Quantas fases você enxerga? Que tipo de mistura é essa?",
+      "Se colocarmos muito sal em um copo de água, a mistura continua homogênea? Explique."
+    ],
+    "tabela_lab": ["Mistura", "Minha previsão", "Fases que observei", "Homogênea ou heterogênea?"],
+    "tabela_linhas": ["Água + sal", "Água + óleo", "Água + areia", "Água + açúcar"]
+  },
+  "aluno_adaptado": {
+    "orientacao": "ALGUMAS MISTURAS TÊM SÓ 1 PARTE. OUTRAS TÊM 2 PARTES SEPARADAS. OLHE A IMAGEM: O COPO COM ÁGUA E SAL TEM 1 PARTE. O COPO COM ÁGUA E ÓLEO TEM 2 PARTES.",
+    "acao_motora": "PINTE DE AZUL TODO O COPO COM ÁGUA E SAL. NO COPO COM ÓLEO, PINTE DE AZUL A PARTE DE BAIXO E DE AMARELO A PARTE DE CIMA.",
+    "imagem": "copos-fases",
+    "atividade": {
+      "comando": "MARQUE UM X NA RESPOSTA CERTA:",
+      "itens": [
+        { "pergunta": "QUANTAS PARTES TEM O COPO COM ÁGUA E SAL?", "opcoes": ["1 PARTE", "2 PARTES"] },
+        { "pergunta": "QUANTAS PARTES TEM O COPO COM ÁGUA E ÓLEO?", "opcoes": ["1 PARTE", "2 PARTES"] }
+      ]
+    }
+  }
+}

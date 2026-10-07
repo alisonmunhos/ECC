@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>{{ a.codigo }} · {{ a.tema }}</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #1B4332; --verde-medio: #2D6A4F; --salvia: #40916C; --salvia-claro: #EEF7F1;
+    --terra: #A3704C; --terra-claro: #FAF4EE; --tinta: #1F2421; --cinza: #5C635F;
+    --linha: #D9DED9; --papel: #FFFFFF;
+  }
+  @page {
+    size: A4; margin: 13mm 13mm 15mm;
+    @bottom-left { content: "{{ marca }} · {{ a.codigo }}"; font: 8pt 'DM Sans', sans-serif; color: #8A918C; }
+    @bottom-right { content: counter(page) " / " counter(pages); font: 8pt 'DM Sans', sans-serif; color: #8A918C; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', Arial, sans-serif; font-size: 9.3pt; line-height: 1.4; color: var(--tinta);
+         -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1, h2 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; }
+  .pagina { break-after: page; }
+  .pagina:last-child { break-after: auto; }
+  .evitar { break-inside: avoid; }
+
+  /* Cabeçalho do plano */
+  .topo { background: var(--verde); color: #fff; border-radius: 8px; padding: 13px 18px; }
+  .topo .rotulo { font-size: 7.5pt; letter-spacing: 1.6px; text-transform: uppercase; color: #B7E4C7; font-weight: 700; }
+  .topo h1 { font-size: 22pt; line-height: 1.1; margin: 4px 0 2px; }
+  .topo .sub { color: #D8F3DC; font-style: italic; }
+  .topo .meta { margin-top: 8px; font-size: 8.5pt; color: #E9F5EC; }
+  .topo .meta b { color: #fff; }
+  .bncc { margin-top: 10px; background: rgba(255,255,255,.08); border-left: 3px solid #95D5B2; padding: 8px 10px; font-size: 8.5pt; border-radius: 0 4px 4px 0; }
+  .expect { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.15); }
+  .expect .k { font-size: 7pt; text-transform: uppercase; letter-spacing: 1px; color: #95D5B2; font-weight: 700; }
+  .expect .v { font-size: 8.5pt; color: #F1FAF3; }
+
+  .colunas { display: grid; grid-template-columns: 1fr 32%; gap: 14px; margin-top: 10px; }
+  .secao { margin-bottom: 12px; }
+  .secao h2 { font-size: 13pt; color: var(--verde); border-left: 3px solid var(--verde); padding-left: 8px; margin-bottom: 6px; }
+  .cartao { border: 1px solid var(--linha); border-radius: 6px; padding: 10px 12px; background: var(--papel); }
+  .cartao p + p { margin-top: 6px; }
+  .momento { border-left: 3px solid var(--salvia); background: var(--salvia-claro); border-radius: 0 6px 6px 0; padding: 5px 9px; margin-bottom: 5px; }
+  .momento .t { font-size: 7.5pt; font-weight: 700; color: var(--salvia); text-transform: uppercase; letter-spacing: .5px; }
+  .momento ul { margin-left: 14px; }
+  .lado .cartao { margin-bottom: 10px; }
+  .lado h3 { font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; color: var(--verde); border-bottom: 1px solid var(--linha); padding-bottom: 4px; margin-bottom: 6px; }
+  .pilulas span { display: inline-block; background: #F1F3F1; border: 1px solid var(--linha); border-radius: 12px; padding: 1px 8px; margin: 0 3px 4px 0; font-size: 8pt; }
+  .dica { background: var(--terra-claro); border-color: #E7D3C2; }
+  .dica b { color: var(--terra); }
+
+  .caminhos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .caminho { border: 1px solid #E2CDB9; background: var(--terra-claro); border-radius: 6px; padding: 8px 10px; }
+  .caminho .n { color: var(--terra); font-weight: 700; }
+  .caminho .q { font-size: 8pt; color: var(--cinza); font-style: italic; margin: 2px 0 4px; }
+  .rubrica p { margin-top: 4px; }
+  .adapt { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; }
+  .adapt div { font-size: 8.8pt; }
+  .adapt b { display: block; font-size: 7.5pt; text-transform: uppercase; letter-spacing: .6px; color: var(--verde-medio); }
+  .nota { font-size: 8pt; color: var(--cinza); font-style: italic; margin-bottom: 6px; }
+  .gabarito { font-size: 8.8pt; }
+
+  /* Folhas do aluno */
+  .aluno-topo { display: flex; justify-content: space-between; font-size: 9pt; border-bottom: 1.5px solid var(--tinta); padding-bottom: 6px; margin-bottom: 10px; }
+  .aluno-topo .marca { font-size: 7.5pt; color: var(--cinza); text-align: right; }
+  .aluno h1 { font-size: 20pt; color: var(--verde); }
+  .aluno .sub { color: var(--cinza); margin-bottom: 10px; }
+  .resumo { background: var(--salvia-claro); border-radius: 6px; padding: 8px 12px 8px 26px; margin-bottom: 10px; }
+  .resumo li { margin-bottom: 2px; }
+  .missao { border: 1.5px dashed var(--salvia); border-radius: 6px; padding: 8px 12px; margin-bottom: 10px; }
+  .missao b { color: var(--salvia); }
+  .questoes li { margin: 0 0 4px 18px; }
+  .linhas { height: 46px; background: repeating-linear-gradient(to bottom, transparent 0 21px, #C9CFCA 21px 22px); margin: 2px 0 8px; }
+  table.lab { width: 100%; border-collapse: collapse; font-size: 9pt; margin-top: 4px; }
+  table.lab th { background: var(--verde); color: #fff; text-align: left; padding: 5px 6px; font-weight: 500; }
+  table.lab td { border: 1px solid var(--linha); height: 26px; padding: 4px 6px; }
+
+  .adaptada { font-size: 14pt; line-height: 1.5; }
+  .adaptada h1 { font-family: 'DM Sans', Arial, sans-serif; font-weight: 700; font-size: 22pt; text-transform: uppercase; color: var(--tinta); margin-bottom: 8px; }
+  .adaptada .caixa { border: 2px solid var(--tinta); border-radius: 10px; padding: 10px 14px; margin-bottom: 12px; }
+  .adaptada .icone { font-weight: 700; font-size: 11pt; letter-spacing: 1px; }
+  .adaptada img { display: block; width: 92%; margin: 4px auto 10px; }
+  .opcoes { display: flex; gap: 28px; margin: 4px 0 10px 4px; }
+  .opcoes span::before { content: ""; display: inline-block; width: 22px; height: 22px; border: 2px solid var(--tinta); border-radius: 4px; vertical-align: middle; margin-right: 8px; }
+  .simbolo { font-size: 11pt; }
+</style>
+</head>
+<body>
+
+<!-- ============ PLANO DO PROFESSOR — PÁGINA 1 ============ -->
+<section class="pagina">
+  <div class="topo evitar">
+    <div class="rotulo">Plano do professor · {{ a.componente }} {{ a.serie }} · Bloco {{ a.bloco.codigo }} — {{ a.bloco.nome }} · {{ a.bloco.posicao }}</div>
+    <h1>{{ a.tema }}</h1>
+    <div class="sub">{{ a.subtitulo }}</div>
+    <div class="meta">Código <b>{{ a.codigo }}</b> · Duração: <b>{{ a.duracao }}</b></div>
+    {% for h in a.bncc %}
+    <div class="bncc"><b>BNCC {{ h.codigo }}:</b> {{ h.texto }}</div>
+    {% endfor %}
+    <div class="expect">
+      <div><div class="k">Saber</div><div class="v">{{ a.expectativas.saber }}</div></div>
+      <div><div class="k">Fazer</div><div class="v">{{ a.expectativas.fazer }}</div></div>
+      <div><div class="k">Ser</div><div class="v">{{ a.expectativas.ser }}</div></div>
+    </div>
+  </div>
+
+  <div class="colunas">
+    <div>
+      <div class="secao">
+        <h2>1. Para o professor: o essencial</h2>
+        <div class="cartao">{% for p in a.fundamentos %}<p>{{ p }}</p>{% endfor %}</div>
+      </div>
+      <div class="secao">
+        <h2>2. Roteiro sugerido</h2>
+        {% for m in a.roteiro %}
+        <div class="momento evitar">
+          <div class="t">{{ m.tempo }} · {{ m.nome }}</div>
+          <ul>{% for p in m.passos %}<li>{{ p }}</li>{% endfor %}</ul>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <aside class="lado">
+      <div class="cartao evitar"><h3>Materiais</h3><div class="pilulas">{% for m in a.materiais %}<span>{{ m }}</span>{% endfor %}</div></div>
+      <div class="cartao dica evitar"><h3>Dica de sala</h3>
+        <p><b>Erro comum:</b> {{ a.dica.erro }}</p>
+        <p style="margin-top:6px"><b>Como corrigir:</b> {{ a.dica.como_corrigir }}</p>
+      </div>
+      <div class="cartao evitar"><h3>Competências gerais</h3>{% for c in a.competencias_gerais %}<p>{{ c }}</p>{% endfor %}</div>
+      <div class="cartao evitar"><h3>Folhas do aluno</h3>
+        <p><span class="simbolo">●</span> Folha convencional</p>
+        <p><span class="simbolo">◆</span> Folha adaptada</p>
+        <p class="nota" style="margin-top:6px">Mesmo conteúdo, dois níveis. As folhas não trazem a palavra "adaptada": o símbolo identifica a versão só para você.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ PLANO DO PROFESSOR — PÁGINA 2 ============ -->
+<section class="pagina">
+  <div class="secao">
+    <h2>3. Caminhos possíveis: escolha o que cabe na sua semana</h2>
+    <div class="caminhos">
+      {% for c in a.caminhos %}
+      <div class="caminho evitar">
+        <div class="n">Caminho {{ c.letra }} · {{ c.nome }}</div>
+        <div class="q">{{ c.quando }}</div>
+        <div>{{ c.como }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="secao evitar">
+    <h2>4. Avaliação formativa</h2>
+    <div class="cartao rubrica">
+      <p><b>Pergunta de saída:</b> {{ a.avaliacao.pergunta }}</p>
+      <p>🟢 <b>Pleno:</b> {{ a.avaliacao.rubrica.pleno }}</p>
+      <p>🟡 <b>Parcial:</b> {{ a.avaliacao.rubrica.parcial }}</p>
+      <p>🔴 <b>Atenção:</b> {{ a.avaliacao.rubrica.atencao }}</p>
+    </div>
+  </div>
+
+  <div class="secao evitar">
+    <h2>5. Adaptações</h2>
+    <p class="nota">Foco em remover barreiras, não em diagnóstico: use o que fizer sentido para cada estudante, com ou sem laudo.</p>
+    <div class="cartao adapt">
+      {% for ad in a.adaptacoes %}<div><b>{{ ad.perfil }}</b>{{ ad.texto }}</div>{% endfor %}
+    </div>
+  </div>
+
+  <div class="secao evitar">
+    <h2>6. Gabarito</h2>
+    <div class="cartao gabarito">{% for g in a.gabarito %}<p>{{ g }}</p>{% endfor %}</div>
+  </div>
+</section>
+
+<!-- ============ FOLHA DO ALUNO ● CONVENCIONAL ============ -->
+<section class="pagina aluno">
+  <div class="aluno-topo">
+    <div>Nome: _______________________________________ Turma: ______ Data: ___/___</div>
+    <div class="marca"><span class="simbolo">●</span> {{ a.codigo }}</div>
+  </div>
+  <h1>{{ a.tema }}</h1>
+  <div class="sub">{{ a.subtitulo }}</div>
+
+  <ul class="resumo">{% for r in a.aluno_convencional.resumo %}<li>{{ r }}</li>{% endfor %}</ul>
+
+  <div class="missao evitar"><b>Missão do caderno:</b> {{ a.aluno_convencional.missao }}</div>
+
+  <ol class="questoes">
+    {% for q in a.aluno_convencional.questoes %}
+    <li class="evitar">{{ q }}<div class="linhas"></div></li>
+    {% endfor %}
+  </ol>
+
+  <div class="evitar">
+    <b>Laboratório de copos</b> <span class="nota">(Caminho B)</span>
+    <table class="lab">
+      <tr>{% for h in a.aluno_convencional.tabela_lab %}<th>{{ h }}</th>{% endfor %}</tr>
+      {% for l in a.aluno_convencional.tabela_linhas %}<tr><td>{{ l }}</td><td></td><td></td><td></td></tr>{% endfor %}
+    </table>
+  </div>
+</section>
+
+<!-- ============ FOLHA DO ALUNO ◆ ADAPTADA ============ -->
+<section class="pagina aluno adaptada">
+  <div class="aluno-topo">
+    <div>NOME: ________________________________ TURMA: ______</div>
+    <div class="marca"><span class="simbolo">◆</span> {{ a.codigo }}</div>
+  </div>
+  <h1>{{ a.tema }}</h1>
+
+  <div class="caixa"><span class="icone">👀 OLHE:</span> {{ a.aluno_adaptado.orientacao }}</div>
+
+  <img src="{{ imagem }}" alt="">
+
+  <div class="caixa"><span class="icone">🖍️ PINTE:</span> {{ a.aluno_adaptado.acao_motora }}</div>
+
+  <div class="caixa evitar">
+    <span class="icone">✏️ {{ a.aluno_adaptado.atividade.comando }}</span>
+    {% for it in a.aluno_adaptado.atividade.itens %}
+    <div style="margin-top:6px">{{ it.pergunta }}</div>
+    <div class="opcoes">{% for o in it.opcoes %}<span>{{ o }}</span>{% endfor %}</div>
+    {% endfor %}
+  </div>
+</section>
+
+</body>
+</html>
