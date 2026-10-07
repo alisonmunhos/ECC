@@ -49,7 +49,16 @@ Problemas:
 
 - PDFs / apostilas para imprimir (caminho mais rápido — EF já está quase pronto).
 - Ferramentas digitais (gerador/planejador no Lovable) — segundo passo.
-- Nicho candidato: **Ciências inclusivas** (material adaptado para alunos de inclusão / AEE).
+- ~~Nicho candidato: Ciências inclusivas~~ → **revisado (out/2026):** inclusão NÃO é o foco isolado.
+
+### Posicionamento definido pelo autor
+
+- **Todo material sai "casado": versão convencional + versão adaptada do MESMO conteúdo.**
+- Motivo: o professor tem alunos diversos na mesma sala e não encontra material alinhado para ensinar
+  de forma equânime (todos trabalham o mesmo tema, cada um no seu nível).
+- Público principal: professor de Ciências/Biologia regente com turma diversa; AEE é público secundário.
+- Etapa prioritária: Fundamental anos finais (6º–9º); Médio em segundo plano.
+- Conceito pedagógico próximo: Desenho Universal para a Aprendizagem (DUA) — avaliar uso na comunicação.
 
 ## Pendências guardadas para depois
 
