@@ -110,6 +110,25 @@ Alternativa avaliada: modelo HTML (base v3) + script que lê o CSV e gera PDF (C
 - **Marca sem rosto e sem o nome do autor** no @ e no produto; autor aparece no máximo como responsável.
 - Preferência de comunicação: respostas curtas e diretas.
 
+## Estrutura de produtos (out/2026)
+
+Pacotes desejados (do maior ao menor):
+
+1. Completo: Ciências 6º–9º + Biologia 1ª–3ª
+2. Só Ciências EF (6º–9º) · 3. Só Biologia EM (1ª–3ª)
+4. Por série · 5. Por bloco temático (etapa posterior)
+
+Princípio: **autoria do professor** — nada amarrado a semana/trimestre fixo.
+
+Proposta de organização:
+
+- Unidade básica = **bloco temático** (ex.: "Matéria e misturas"), com nº variável de aulas.
+- Cada aula = plano do professor + par de folhas do aluno (convencional + adaptada).
+- Códigos sem trimestre (ex.: `CIE6-B01-A03` = Ciências 6º, bloco 1, aula 3).
+- **Guia de distribuição** separado com sugestões de calendário (trimestral, bimestral, semestral),
+  encaixando blocos nos períodos; o professor reordena, pula ou mistura com material próprio.
+- Formato do guia: PDF no pacote primeiro; depois página/ferramenta interativa (ex.: Lovable).
+
 ## Pendências guardadas para depois
 
 - Análise de nicho e redes sociais (Instagram, carrosséis, Reels, perfil, vendas).
