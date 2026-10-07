@@ -1,0 +1,45 @@
+Bloco,Nome do bloco,Ordem,Código novo,Código antigo,Tema,Tipo,Habilidades BNCC,Observação
+B01,Matéria e misturas,1,CIE6-B01-A01,EF06-CIE-A01,O QUE É A MATÉRIA?,apoio,,Pré-requisito (propriedades da matéria); sem habilidade específica do 6º
+B01,Matéria e misturas,2,CIE6-B01-A02,EF06-CIE-A02,VOLUME E DENSIDADE,apoio,,Pré-requisito; densidade não é habilidade do 6º
+B01,Matéria e misturas,3,CIE6-B01-A03,EF06-CIE-A03,MISTURAS E FASES,aula,EF06CI01,
+B01,Matéria e misturas,4,CIE6-B01-A04,EF06-CIE-A04,SEPARANDO MISTURAS HETEROGÊNEAS,aula,EF06CI03,
+B01,Matéria e misturas,5,CIE6-B01-A05,EF06-CIE-A05,SEPARANDO MISTURAS HOMOGÊNEAS,aula,EF06CI03,
+B01,Matéria e misturas,6,CIE6-B01-A06,EF06-CIE-A06,ESTAÇÃO DE TRATAMENTO DE ÁGUA (ETA),aula,EF06CI03,
+B01,Matéria e misturas,7,CIE6-B01-A07,EF06-CIE-A07,OFICINA DE SISTEMATIZAÇÃO,oficina,EF06CI01; EF06CI03,
+B02,Transformações da matéria,1,CIE6-B02-A01,EF06-CIE-A08,TRANSFORMAÇÕES FÍSICAS DA MATÉRIA,aula,EF06CI02,
+B02,Transformações da matéria,2,CIE6-B02-A02,EF06-CIE-A09,TRANSFORMAÇÕES QUÍMICAS,aula,EF06CI02,
+B02,Transformações da matéria,3,CIE6-B02-A03,EF06-CIE-A10,OFICINA PRÁTICA DE TRANSFORMAÇÕES,oficina,EF06CI02,
+B03,Materiais sintéticos e sociedade,1,CIE6-B03-A01,EF06-CIE-A11,MATERIAIS NATURAIS VS. SINTÉTICOS,aula,EF06CI04,
+B03,Materiais sintéticos e sociedade,2,CIE6-B03-A02,EF06-CIE-A12,MEDICAMENTOS E SAÚDE,aula,EF06CI04,
+B03,Materiais sintéticos e sociedade,3,CIE6-B03-A03,EF06-CIE-A13,IMPACTOS E RECICLAGEM,aula,EF06CI04,
+B04,Célula e níveis de organização,1,CIE6-B04-A01,EF06-CIE-A15,A CÉLULA - A UNIDADE DA VIDA,aula,EF06CI05,
+B04,Célula e níveis de organização,2,CIE6-B04-A02,EF06-CIE-A16,AS PARTES DA CÉLULA,aula,EF06CI05,
+B04,Célula e níveis de organização,3,CIE6-B04-A03,EF06-CIE-A17,OS NÍVEIS DE ORGANIZAÇÃO,aula,EF06CI06,
+B05,Sistema nervoso e substâncias psicoativas,1,CIE6-B05-A01,EF06-CIE-A18,SISTEMA NERVOSO - A CENTRAL DE COMANDO,aula,EF06CI07,
+B05,Sistema nervoso e substâncias psicoativas,2,CIE6-B05-A02,EF06-CIE-A19,OS NEURÔNIOS E AS SINAPSES,aula,EF06CI07,
+B05,Sistema nervoso e substâncias psicoativas,3,CIE6-B05-A03,EF06-CIE-A21,OS SENTIDOS - PERCEPÇÃO DO MUNDO,aula,EF06CI07,Antes das drogas: sentidos e reflexos completam o sistema nervoso
+B05,Sistema nervoso e substâncias psicoativas,4,CIE6-B05-A04,EF06-CIE-A20,DROGAS E O SISTEMA NERVOSO,aula,EF06CI10,Movida para depois dos sentidos (fecha o bloco)
+B06,Visão e lentes corretivas,1,CIE6-B06-A01,EF06-CIE-A22,A VISÃO E A CÂMARA DO CORPO,aula,EF06CI08,
+B06,Visão e lentes corretivas,2,CIE6-B06-A02,EF06-CIE-A23,PROBLEMAS DE VISÃO E LENTES,aula,EF06CI08,
+B07,"Movimento: ossos, músculos e nervos",1,CIE6-B07-A01,EF06-CIE-A24,O SISTEMA LOCOMOTOR - OSSOS,aula,EF06CI09,
+B07,"Movimento: ossos, músculos e nervos",2,CIE6-B07-A02,EF06-CIE-A25,O SISTEMA LOCOMOTOR - MÚSCULOS,aula,EF06CI09,
+B07,"Movimento: ossos, músculos e nervos",3,CIE6-B07-A03,EF06-CIE-A26,RESUMO: A MÁQUINA HUMANA,sistematização,EF06CI09; EF06CI07,
+B07,"Movimento: ossos, músculos e nervos",4,CIE6-B07-A04,EF06-CIE-A27,OFICINA E FEIRA DE CIÊNCIAS,oficina,EF06CI07; EF06CI08; EF06CI09,
+B08,A Terra no espaço: forma e movimentos,1,CIE6-B08-A01,EF06-CIE-A29,ROTAÇÃO E TRANSLAÇÃO,aula,EF06CI14,
+B08,A Terra no espaço: forma e movimentos,2,CIE6-B08-A02,—,EVIDÊNCIAS DE QUE A TERRA É REDONDA,nova,EF06CI13,"LACUNA: criar aula (navios no horizonte, sombra na Lua, fotos do espaço)"
+B08,A Terra no espaço: forma e movimentos,3,CIE6-B08-A03,EF06-CIE-A30,FORMA DA TERRA E AS ESTAÇÕES,aula,EF06CI14,Hoje mistura forma da Terra e estações; separar a parte de esfericidade para NOVA1
+B08,A Terra no espaço: forma e movimentos,4,CIE6-B08-A04,—,A SOMBRA DO GNÔMON,nova,EF06CI14,LACUNA: criar aula prática com vara/gnômon ao longo do dia
+B09,"Estrutura da Terra, rochas e fósseis",1,CIE6-B09-A01,EF06-CIE-A31,O INTERIOR DA TERRA,aula,EF06CI11,
+B09,"Estrutura da Terra, rochas e fósseis",2,CIE6-B09-A02,EF06-CIE-A32,LITOSFERA E ROCHAS,aula,EF06CI12,
+B09,"Estrutura da Terra, rochas e fósseis",3,CIE6-B09-A03,EF06-CIE-A33,FÓSSEIS E A IDADE DA TERRA,aula,EF06CI12,
+B09,"Estrutura da Terra, rochas e fósseis",4,CIE6-B09-A04,EF06-CIE-A34,OFICINA DE ASTRONOMIA E GEOLOGIA,oficina,EF06CI11; EF06CI12; EF06CI14,
+B09,"Estrutura da Terra, rochas e fósseis",5,CIE6-B09-A05,EF06-CIE-A35,SISTEMATIZAÇÃO (BLOCO 5),sistematização,EF06CI11; EF06CI12,
+B10,Atmosfera,1,CIE6-B10-A01,EF06-CIE-A36,A ATMOSFERA DA TERRA,aula,EF06CI11,
+AMP,Ampliação: clima e sustentabilidade (BNCC do 7º ano),1,CIE6-AMP-A01,EF06-CIE-A37,EFEITO ESTUFA NATURAL,ampliação,EF07CI12,"Repete no 7º (A12, A31) — sugerir mover para o 7º"
+AMP,Ampliação: clima e sustentabilidade (BNCC do 7º ano),2,CIE6-AMP-A02,EF06-CIE-A38,AQUECIMENTO GLOBAL,ampliação,EF07CI13,"Repete no 7º (A13, A32)"
+AMP,Ampliação: clima e sustentabilidade (BNCC do 7º ano),3,CIE6-AMP-A03,EF06-CIE-A39,A CAMADA DE OZÔNIO,ampliação,EF07CI14,Repete no 7º (A33–A34)
+AMP,Ampliação: clima e sustentabilidade (BNCC do 7º ano),4,CIE6-AMP-A04,EF06-CIE-A40,SUSTENTABILIDADE E AÇÃO CIDADÃ,ampliação,EF07CI13,
+AMP,Ampliação: clima e sustentabilidade (BNCC do 7º ano),5,CIE6-AMP-A05,EF06-CIE-A41,OFICINA DE CLIMATOLOGIA E SUSTENTABILIDADE,ampliação,EF07CI13,
+AVA,Revisões e avaliações (usar ao fim dos blocos indicados),1,CIE6-AVA-A01,EF06-CIE-A14,AVALIAÇÃO FINAL DO 1º TRIMESTRE,avaliação,EF06CI01–04,Ligada aos blocos B01–B03
+AVA,Revisões e avaliações (usar ao fim dos blocos indicados),2,CIE6-AVA-A02,EF06-CIE-A28,AVALIAÇÃO FINAL DO 2º TRIMESTRE,avaliação,EF06CI05–10,Ligada aos blocos B04–B07
+AVA,Revisões e avaliações (usar ao fim dos blocos indicados),3,CIE6-AVA-A03,EF06-CIE-A42,AVALIAÇÃO FINAL DO 3º TRIMESTRE,avaliação,EF06CI11–14,Ligada aos blocos B08–B10
