@@ -101,6 +101,15 @@ Pontos de atenção:
 
 Alternativa avaliada: modelo HTML (base v3) + script que lê o CSV e gera PDF (Chromium), rodando nesta sessão.
 
+## Decisões de marca e redes (out/2026)
+
+- Visão de longo prazo: atender **todas as séries**; 6º–9º é só o ponto de partida.
+- Estratégia: **conteúdo primeiro, venda depois** — redes começam com temas de valor (burocratização do
+  trabalho docente, inclusão em dados, dicas de planejamento com IA, ferramentas úteis) para formar
+  público; infoprodutos entram depois.
+- **Marca sem rosto e sem o nome do autor** no @ e no produto; autor aparece no máximo como responsável.
+- Preferência de comunicação: respostas curtas e diretas.
+
 ## Pendências guardadas para depois
 
 - Análise de nicho e redes sociais (Instagram, carrosséis, Reels, perfil, vendas).
