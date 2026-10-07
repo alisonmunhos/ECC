@@ -14,8 +14,8 @@ O professor decide a ordem e o ritmo. Abaixo, três sugestões prontas usando os
 | B08 | A Terra no espaço: forma e movimentos | 4 (2 novas) |
 | B09 | Estrutura da Terra, rochas e fósseis | 5 |
 | B10 | Atmosfera | 1 |
-| AMP | Ampliação: clima e sustentabilidade (opcional) | 5 |
-| AVA | Revisões/avaliações | 3 |
+| B11 | Ampliação (opcional): clima e sustentabilidade | 5 |
+| B12 | Revisões | 3 |
 
 ## Trimestral
 
@@ -23,7 +23,7 @@ O professor decide a ordem e o ritmo. Abaixo, três sugestões prontas usando os
 |---|---|---|
 | 1º tri | B01 · B02 · B03 + revisão A14 | 14 |
 | 2º tri | B04 · B05 · B06 · B07 + revisão A28 | 14 |
-| 3º tri | B08 · B09 · B10 + revisão A42 (+ AMP se houver tempo) | 11–16 |
+| 3º tri | B08 · B09 · B10 + revisão A42 (+ B11 se houver tempo) | 11–16 |
 
 ## Bimestral
 
@@ -32,13 +32,13 @@ O professor decide a ordem e o ritmo. Abaixo, três sugestões prontas usando os
 | 1º bim | B01 · B02 | 10 |
 | 2º bim | B03 · B04 · B05 | 10 |
 | 3º bim | B06 · B07 · B08 | 10 |
-| 4º bim | B09 · B10 (+ AMP opcional) | 6–11 |
+| 4º bim | B09 · B10 (+ B11 opcional) | 6–11 |
 
 ## Semestral
 
 | Período | Blocos | Aulas |
 |---|---|---|
 | 1º sem | B01 a B05 | 20 |
-| 2º sem | B06 a B10 (+ AMP opcional) | 16–21 |
+| 2º sem | B06 a B10 (+ B11 opcional) | 16–21 |
 
-Revisões (AVA) entram ao fim dos blocos a que se referem, em qualquer calendário.
+Revisões (B12) entram ao fim dos blocos a que se referem, em qualquer calendário.
