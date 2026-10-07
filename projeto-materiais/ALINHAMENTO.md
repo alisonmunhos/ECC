@@ -84,6 +84,23 @@ Problemas a corrigir antes de vender:
 - Esquema de códigos diverge entre planilha (EM01-BIO-A01) e planos (1EM-A01, 1EM-T1-A01) — unificar.
 - Link de documentário da Netflix exige assinatura — oferecer alternativa gratuita.
 
+## Automação de preenchimento de templates (referência em `referencias/automacao-slides/`)
+
+Projeto do autor em Google Apps Script: duplica um slide-modelo A4 do Google Slides para cada linha da
+planilha, troca `{{CODIGO}}`, `{{SÉRIE}}`, `{{TEMA}}`, `{{OBJETIVO}}`, `{{BÚSSOLA}}`,
+`{{ORIENTAÇÃO ADAPTADA}}`, `{{AÇÃO MOTORA}}` e coloca no lugar de `{{IMAGEM}}` a imagem da pasta do
+Drive cujo nome contém o código (ex.: `EF06-CIE-A01`). O layout é só da folha **adaptada** do aluno.
+
+Pontos de atenção:
+
+- Lê colunas por posição (0–6); a planilha completa tem 13 colunas em outra ordem → ler pelo nome do cabeçalho.
+- Limite de 6 min por execução do Apps Script; está fixo em 10 linhas → processar em lotes com retomada.
+- Textos longos podem estourar as caixas (Slides não ajusta fonte automaticamente pela API).
+- Não exporta PDF; o slide-modelo fica como 1º slide do resultado.
+- Falta o layout da folha **convencional** para fechar o par.
+
+Alternativa avaliada: modelo HTML (base v3) + script que lê o CSV e gera PDF (Chromium), rodando nesta sessão.
+
 ## Pendências guardadas para depois
 
 - Análise de nicho e redes sociais (Instagram, carrosséis, Reels, perfil, vendas).
