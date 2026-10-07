@@ -21,9 +21,9 @@ O professor decide a ordem e o ritmo. Abaixo, três sugestões prontas usando os
 
 | Período | Blocos | Aulas |
 |---|---|---|
-| 1º tri | B01 · B02 · B03 + revisão A14 | 14 |
-| 2º tri | B04 · B05 · B06 · B07 + revisão A28 | 14 |
-| 3º tri | B08 · B09 · B10 + revisão A42 (+ B11 se houver tempo) | 11–16 |
+| 1º tri | B01 · B02 · B03 + revisão B12-A01 | 14 |
+| 2º tri | B04 · B05 · B06 · B07 + revisão B12-A02 | 14 |
+| 3º tri | B08 · B09 · B10 + revisão B12-A03 (+ B11 se houver tempo) | 11–16 |
 
 ## Bimestral
 
