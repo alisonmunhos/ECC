@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Aula · 1EM-T1-A01 · Ecologia Básica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde-escuro: #0F5C3A;
+    --verde-medio: #1D9E75;
+    --verde-claro: #9FE1CB;
+    --verde-palido: #E1F5EE;
+    --verde-musgo: #3B6D11;
+    --terra: #BA7517;
+    --terra-claro: #FAEEDA;
+    --azul-bio: #185FA5;
+    --azul-claro: #E6F1FB;
+    --cinza-escuro: #2C2C2A;
+    --cinza-medio: #5F5E5A;
+    --cinza-claro: #D3D1C7;
+    --cinza-palido: #F1EFE8;
+    --branco: #FAFAF8;
+    --coral: #993C1D;
+    --coral-claro: #FAECE7;
+    --pagina-bg: #F4F2ED;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--pagina-bg);
+    color: var(--cinza-escuro);
+    font-size: 13px;
+    line-height: 1.55;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* CAPA / HEADER */
+  .capa {
+    background: var(--verde-escuro);
+    color: #fff;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    page-break-after: avoid;
+  }
+  .capa-inner {
+    padding: 40px 48px 36px;
+    position: relative;
+    z-index: 2;
+  }
+  .capa-bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .capa-bg-circle.c1 { width: 420px; height: 420px; top: -100px; right: -80px; }
+  .capa-bg-circle.c2 { width: 220px; height: 220px; bottom: -60px; right: 220px; background: rgba(255,255,255,0.03); }
+  .capa-bg-circle.c3 { width: 80px; height: 80px; bottom: 30px; left: 300px; background: rgba(29,158,117,0.3); }
+
+  .badge-codigo {
+    display: inline-block;
+    background: rgba(29,158,117,0.35);
+    border: 1px solid rgba(159,225,203,0.4);
+    color: var(--verde-claro);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .capa h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 6px;
+    max-width: 560px;
+  }
+  .capa h1 em {
+    font-style: italic;
+    color: var(--verde-claro);
+  }
+  .capa-subtitulo {
+    color: rgba(255,255,255,0.65);
+    font-size: 13px;
+    margin-bottom: 32px;
+  }
+
+  .capa-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+  }
+  .capa-meta-item {
+    padding-right: 20px;
+  }
+  .capa-meta-item:not(:last-child) {
+    border-right: 1px solid rgba(255,255,255,0.1);
+    margin-right: 20px;
+  }
+  .meta-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 3px;
+  }
+  .meta-valor {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* BNCC STRIP */
+  .bncc-strip {
+    background: var(--verde-medio);
+    padding: 14px 48px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .bncc-code {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+  .bncc-text {
+    color: rgba(255,255,255,0.92);
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+
+  /* LAYOUT PRINCIPAL */
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 0;
+    max-width: 100%;
+  }
+
+  .coluna-principal {
+    padding: 32px 36px 40px 48px;
+    border-right: 1px solid var(--cinza-claro);
+  }
+
+  .coluna-lateral {
+    padding: 28px 28px 40px;
+    background: var(--branco);
+  }
+
+  /* SEÇÃO */
+  .secao {
+    margin-bottom: 30px;
+  }
+  .secao-titulo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid var(--cinza-claro);
+  }
+  .secao-titulo-num {
+    width: 22px; height: 22px;
+    background: var(--verde-escuro);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .secao-titulo h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--cinza-medio);
+  }
+
+  /* MOMENTOS */
+  .momento {
+    background: var(--branco);
+    border-radius: 10px;
+    border: 1px solid var(--cinza-claro);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .momento-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--cinza-claro);
+  }
+  .momento-dot {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .momento-dot.abertura { background: var(--verde-palido); }
+  .momento-dot.construcao { background: var(--azul-claro); }
+  .momento-dot.pratica { background: var(--terra-claro); }
+  .momento-dot.encerramento { background: var(--coral-claro); }
+
+  .momento-header-texto { flex: 1; }
+  .momento-numero {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cinza-medio);
+    margin-bottom: 1px;
+  }
+  .momento-nome {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--cinza-escuro);
+  }
+  .momento-nome em {
+    font-style: normal;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--cinza-medio);
+    margin-left: 6px;
+  }
+
+  .momento-badge {
+    font-size: 10.5px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-abertura { background: var(--verde-palido); color: var(--verde-musgo); }
+  .badge-construcao { background: var(--azul-claro); color: var(--azul-bio); }
+  .badge-pratica { background: var(--terra-claro); color: var(--terra); }
+  .badge-encerramento { background: var(--coral-claro); color: var(--coral); }
+
+  .momento-corpo {
+    padding: 14px 16px 16px;
+  }
+
+  .passo-list { list-style: none; }
+  .passo-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 5px 0;
+  }
+  .passo-n {
+    width: 20px; height: 20px;
+    min-width: 20px;
+    background: var(--cinza-palido);
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--cinza-medio);
+    margin-top: 1px;
+  }
+  .passo-texto { font-size: 12.5px; color: var(--cinza-escuro); line-height: 1.5; }
+  .passo-texto strong { color: var(--verde-escuro); font-weight: 600; }
+
+  .momento-nota {
+    background: var(--cinza-palido);
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .nota-icon { font-size: 13px; margin-top: 1px; flex-shrink: 0; }
+  .nota-texto { font-size: 11.5px; color: var(--cinza-medio); line-height: 1.45; }
+  .nota-texto strong { color: var(--cinza-escuro); }
+
+  /* TABELA AVALIAÇÃO */
+  .avaliacao-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .avaliacao-table th {
+    background: var(--verde-escuro);
+    color: #fff;
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .avaliacao-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--cinza-claro);
+    vertical-align: top;
+    line-height: 1.4;
+  }
+  .avaliacao-table tr:last-child td { border-bottom: none; }
+  .avaliacao-table tr:nth-child(even) td { background: var(--cinza-palido); }
+  .avaliacao-table th:first-child { border-radius: 6px 0 0 0; }
+  .avaliacao-table th:last-child { border-radius: 0 6px 0 0; }
+
+  .tag-formativa {
+    background: var(--verde-palido);
+    color: var(--verde-musgo);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    display: inline-block;
+  }
+
+  /* LATERAL */
+  .lateral-card {
+    background: var(--branco);
+    border: 1px solid var(--cinza-claro);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+  .lateral-card-titulo {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--cinza-medio);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .lateral-card-titulo span {
+    display: inline-block;
+    width: 3px;
+    height: 12px;
+    border-radius: 2px;
+    background: var(--verde-medio);
+  }
+
+  /* OBJETIVO */
+  .objetivo-box {
+    background: var(--verde-palido);
+    border: 1px solid var(--verde-claro);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .objetivo-box .objetivo-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--verde-escuro);
+    margin-bottom: 6px;
+  }
+  .objetivo-box p {
+    font-size: 12.5px;
+    color: var(--verde-escuro);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* NIVEIS */
+  .niveis-visual {
+    position: relative;
+    margin: 12px 0 8px;
+  }
+  .nivel-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 8px;
+    margin-bottom: 2px;
+    border-radius: 5px;
+  }
+  .nivel-bolinha {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .nivel-nome { font-size: 12px; font-weight: 500; color: var(--cinza-escuro); }
+  .nivel-desc { font-size: 10.5px; color: var(--cinza-medio); margin-left: auto; text-align: right; }
+
+  .n1 { background: #0F5C3A; }
+  .n2 { background: #1D9E75; }
+  .n3 { background: #3B9E5A; }
+  .n4 { background: #639922; }
+  .n5 { background: #BA7517; }
+  .n6 { background: #A32D2D; }
+  .n7 { background: #534AB7; }
+
+  /* COMPETÊNCIAS */
+  .comp-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--cinza-claro);
+  }
+  .comp-item:last-child { border-bottom: none; }
+  .comp-tag {
+    background: var(--cinza-palido);
+    color: var(--cinza-escuro);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-top: 1px;
+  }
+  .comp-desc { font-size: 11.5px; color: var(--cinza-escuro); line-height: 1.4; }
+
+  /* DIFERENCIAÇÃO */
+  .dif-item {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border-left: 3px solid;
+    margin-bottom: 8px;
+    font-size: 11.5px;
+    line-height: 1.45;
+  }
+  .dif-tea { border-color: #534AB7; background: #EEEDFE; color: #26215C; }
+  .dif-tdah { border-color: #BA7517; background: #FAEEDA; color: #412402; }
+  .dif-dv { border-color: #185FA5; background: #E6F1FB; color: #042C53; }
+  .dif-da { border-color: #1D9E75; background: #E1F5EE; color: #04342C; }
+  .dif-dislexia { border-color: #D85A30; background: #FAECE7; color: #4A1B0C; }
+
+  .dif-label { font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+
+  /* CONCEITOS CHAVE */
+  .conceito-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .conceito-card {
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+  .conceito-card.habitat { background: var(--azul-claro); }
+  .conceito-card.nicho { background: var(--terra-claro); }
+  .conceito-emoji { font-size: 18px; margin-bottom: 4px; }
+  .conceito-titulo { font-size: 11px; font-weight: 700; color: var(--cinza-escuro); margin-bottom: 2px; }
+  .conceito-sub { font-size: 10px; color: var(--cinza-medio); }
+  .conceito-destaque { font-size: 12px; font-weight: 600; }
+  .conceito-destaque.azul { color: var(--azul-bio); }
+  .conceito-destaque.terra { color: var(--terra); }
+
+  /* TIMELINE */
+  .timeline {
+    position: relative;
+    padding-left: 20px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px; top: 6px; bottom: 6px;
+    width: 2px;
+    background: var(--cinza-claro);
+    border-radius: 2px;
+  }
+  .tl-item {
+    position: relative;
+    padding: 0 0 12px 16px;
+  }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-dot {
+    position: absolute;
+    left: -14px; top: 3px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--verde-medio);
+    border: 2px solid var(--branco);
+  }
+  .tl-tempo { font-size: 10px; color: var(--cinza-medio); font-weight: 600; }
+  .tl-nome { font-size: 12px; font-weight: 600; color: var(--cinza-escuro); }
+
+  /* SOCIOEMOCIONAL */
+  .socio-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--verde-palido);
+    border: 1px solid var(--verde-claro);
+    color: var(--verde-escuro);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  /* TCT */
+  .tct-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--cinza-claro);
+    font-size: 12px;
+  }
+  .tct-item:last-child { border-bottom: none; }
+  .tct-dot {
+    width: 8px; height: 8px;
+    background: var(--verde-medio);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* MATERIAIS */
+  .mat-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .mat-pill {
+    background: var(--cinza-palido);
+    border: 1px solid var(--cinza-claro);
+    border-radius: 20px;
+    font-size: 11px;
+    padding: 3px 10px;
+    color: var(--cinza-escuro);
+  }
+
+  /* RODAPÉ */
+  .footer {
+    background: var(--verde-escuro);
+    color: rgba(255,255,255,0.55);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 48px;
+    font-size: 10.5px;
+  }
+  .footer strong { color: rgba(255,255,255,0.85); }
+
+  @media print {
+    body { background: white; }
+    .main { display: block; }
+    .coluna-lateral { page-break-before: always; }
+    .momento { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="capa">
+  <div class="capa-bg-circle c1"></div>
+  <div class="capa-bg-circle c2"></div>
+  <div class="capa-bg-circle c3"></div>
+  <div class="capa-inner">
+    <div class="badge-codigo">1EM-T1-A01 · 1ª Série · 1º Trimestre 2026</div>
+    <h1>Níveis de Organização <em>I</em><br>Do Organismo à Comunidade</h1>
+    <p class="capa-subtitulo">Ciências da Natureza · Ecologia Básica · Biologia</p>
+    <div class="capa-meta-grid">
+      <div class="capa-meta-item">
+        <div class="meta-label">Duração</div>
+        <div class="meta-valor">50 min · 1 aula</div>
+      </div>
+      <div class="capa-meta-item">
+        <div class="meta-label">Habilidade BNCC</div>
+        <div class="meta-valor">EM13CNT202</div>
+      </div>
+      <div class="capa-meta-item">
+        <div class="meta-label">Competência Geral</div>
+        <div class="meta-valor">CG2 · Pensamento Científico</div>
+      </div>
+      <div class="capa-meta-item">
+        <div class="meta-label">TCT</div>
+        <div class="meta-valor">Educação Ambiental</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BNCC STRIP -->
+<div class="bncc-strip">
+  <span class="bncc-code">EM13CNT202</span>
+  <span class="bncc-text">Analisar as diversas formas de manifestação da vida em seus diferentes níveis de organização, bem como as condições ambientais favoráveis e os fatores limitantes a elas, com ou sem o uso de dispositivos e aplicativos digitais.</span>
+</div>
+
+<!-- CORPO -->
+<div class="main">
+
+  <!-- COLUNA PRINCIPAL -->
+  <div class="coluna-principal">
+
+    <!-- EXPECTATIVA -->
+    <div class="objetivo-box">
+      <div class="objetivo-label">Expectativa de aprendizagem</div>
+      <p>Reconhecer fatores bióticos e abióticos essenciais à manutenção da vida e as ameaças à sua preservação, organizando os seres vivos nos níveis hierárquicos da ecologia.</p>
+    </div>
+
+    <!-- MOMENTOS -->
+    <div class="secao">
+      <div class="secao-titulo">
+        <div class="secao-titulo-num">1</div>
+        <h2>Roteiro Pedagógico — Momentos da Aula</h2>
+      </div>
+
+      <!-- M1 -->
+      <div class="momento">
+        <div class="momento-header">
+          <div class="momento-dot abertura">🌱</div>
+          <div class="momento-header-texto">
+            <div class="momento-numero">Momento 1</div>
+            <div class="momento-nome">Roda de Conversa Inicial <em>10 min · Sensibilização</em></div>
+          </div>
+          <span class="momento-badge badge-abertura">Abertura</span>
+        </div>
+        <div class="momento-corpo">
+          <ul class="passo-list">
+            <li class="passo-item">
+              <span class="passo-n">1</span>
+              <span class="passo-texto">Organize as carteiras em <strong>semicírculo</strong> para criar ambiente de conversa.</span>
+            </li>
+            <li class="passo-item">
+              <span class="passo-n">2</span>
+              <span class="passo-texto">Escreva na lousa a pergunta disparadora: <strong>"O que você é além de uma pessoa?"</strong></span>
+            </li>
+            <li class="passo-item">
+              <span class="passo-n">3</span>
+              <span class="passo-texto">Deixe os estudantes falarem livremente por 3–4 minutos. <strong>Valorize todas as respostas</strong> — não corrija neste momento.</span>
+            </li>
+            <li class="passo-item">
+              <span class="passo-n">4</span>
+              <span class="passo-texto">Liste no quadro as ideias trazidas: <em>célula, órgão, membro de família, morador da cidade, ser da biosfera…</em></span>
+            </li>
+            <li class="passo-item">
+              <span class="passo-n">5</span>
+              <span class="passo-texto">Conecte as respostas aos níveis de organização biológica — <strong>não revele o conceito ainda</strong>; desperte a curiosidade.</span>
+            </li>
+          </ul>
+          <div class="momento-nota">
+            <span class="nota-icon">💡</span>
+            <span class="nota-texto"><strong>Dica:</strong> Use o pátio como referência sempre que possível: <em>"Que níveis existem aqui fora agora?"</em> Quanto maior a conexão com o entorno real, maior o engajamento.</span>
+          </div>
+          <div class="mat-grid" style="margin-top:12px;">
+            <span class="mat-pill">Lousa / quadro branco</span>
+            <span class="mat-pill">Giz ou marcador colorido</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- M2 -->
+      <div class="momento">
+        <div class="momento-header">
+          <div class="momento-dot construcao">🌿</div>
+          <div class="momento-header-texto">
+            <div class="momento-numero">Momento 2</div>
+            <div class="momento-nome">Mapa Mental Coletivo na Lousa <em>20 min · Construção do Conhecimento</em></div>
+          </div>
+          <span class="momento-badge badge-construcao">Construção</span>
+        </div>
+        <div class="momento-corpo">
+          <ul class="passo-list">
+            <li class="passo-item">
+              <span class="passo-n">1</span>
+              <span class="passo-texto">Apresente os <strong>7 níveis hierárquicos</strong>: Organismo → População → Comunidade → Ecossistema → Bioma → Biosfera.</span>
+            </li>
+            <li class="passo-item">
+              <span class="passo-n">2</span>
+              <span class="passo-texto">Para cada nível, convide um estudante a propor um <strong>exemplo local</strong> — capivara no parque, bando de garças, mata ciliar do arroio.</span>
+            </li>
+            <li class="passo-item">
+              <span class="passo-n">3</span>
+              <span class="passo-texto">Construa o mapa na lousa com <strong>setas e círculos concêntricos</strong>. Use <strong>giz verde para fatores bióticos</strong> e <strong>azul para abióticos</strong>.</span>
+            </li>
+            <li class="passo-item">
+              <span class="passo-n">4</span>
+              <span class="passo-texto">Reserve um espaço lateral no quadro para anotar <strong>dúvidas surgidas</strong> — serão retomadas na sistematização.</span>
+            </li>
+            <li class="passo-item">
+              <span class="passo-n">5</span>
+              <span class="passo-texto">Introduza as analogias de <strong>habitat = endereço</strong> e <strong>nicho ecológico = profissão</strong>. Pergunte: <em>"Dois vizinhos podem ter profissões diferentes?"</em></span>
+            </li>
+          </ul>
+          <div class="momento-nota">
+            <span class="nota-icon">🦺</span>
+            <span class="nota-texto"><strong>Diferenciação:</strong> Estudantes com TDAH podem actuar como "secretário da lousa" a cada nível — o movimento favorece o engajamento sem dispersar a turma.</span>
+          </div>
+          <div class="mat-grid" style="margin-top:12px;">
+            <span class="mat-pill">Giz colorido (verde + azul)</span>
+            <span class="mat-pill">Mapa mental impresso (referência do professor)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- M3 -->
+      <div class="momento">
+        <div class="momento-header">
+          <div class="momento-dot pratica">📓</div>
+          <div class="momento-header-texto">
+            <div class="momento-numero">Momento 3</div>
+            <div class="momento-nome">Mapa Mental Individual no Caderno <em>15 min · Prática e Registro</em></div>
+          </div>
+          <span class="momento-badge badge-pratica">Prática</span>
+        </div>
+        <div class="momento-corpo">
+          <ul class="passo-list">
+            <li class="passo-item">
+              <span class="passo-n">1</span>
+              <span class="passo-texto">Cada estudante reproduz o mapa mental no caderno acrescentando <strong>pelo menos 1 exemplo próprio</strong> por nível.</span>
+            </li>
+            <li class="passo-item">
+              <span class="passo-n">2</span>
+              <span class="passo-texto">Quem terminar antes: adiciona <strong>exemplos de ameaças</strong> a cada nível (desmatamento, poluição, caça ilegal, queimadas).</span>
+            </li>
+            <li class="passo-item">
+              <span class="passo-n">3</span>
+              <span class="passo-texto">Circule pela sala fazendo <strong>perguntas-sonda</strong>: <em>"O seu exemplo é biótico ou abiótico?"</em> — Anote quem apresenta dificuldade para avaliação diagnóstica.</span>
+            </li>
+          </ul>
+          <div class="momento-nota">
+            <span class="nota-icon">♿</span>
+            <span class="nota-texto"><strong>Inclusão:</strong> Estudantes sem material podem usar folha avulsa. Nunca exclua o estudante pela falta de recurso material.</span>
+          </div>
+          <div class="mat-grid" style="margin-top:12px;">
+            <span class="mat-pill">Caderno</span>
+            <span class="mat-pill">Lápis de cor ou caneta (2 cores)</span>
+            <span class="mat-pill">Folha de referência com os 7 níveis (opcional)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- M4 -->
+      <div class="momento">
+        <div class="momento-header">
+          <div class="momento-dot encerramento">🌍</div>
+          <div class="momento-header-texto">
+            <div class="momento-numero">Momento 4</div>
+            <div class="momento-nome">Síntese Coletiva Oral <em>5 min · Sistematização e Encerramento</em></div>
+          </div>
+          <span class="momento-badge badge-encerramento">Encerramento</span>
+        </div>
+        <div class="momento-corpo">
+          <ul class="passo-list">
+            <li class="passo-item">
+              <span class="passo-n">1</span>
+              <span class="passo-texto">Retome as <strong>dúvidas anotadas</strong> no quadro lateral durante o Momento 2.</span>
+            </li>
+            <li class="passo-item">
+              <span class="passo-n">2</span>
+              <span class="passo-texto">Peça a <strong>2–3 estudantes voluntários</strong> que apresentem brevemente seu mapa mental individual.</span>
+            </li>
+            <li class="passo-item">
+              <span class="passo-n">3</span>
+              <span class="passo-texto">Encerre com a <strong>pergunta de saída</strong>: <em>"Em qual nível de organização você sente que pertence agora?"</em></span>
+            </li>
+            <li class="passo-item">
+              <span class="passo-n">4</span>
+              <span class="passo-texto">Anuncia a próxima aula: <strong>Ecossistemas do Rio Grande do Sul</strong> — observação guiada do pátio escolar.</span>
+            </li>
+          </ul>
+          <div class="mat-grid" style="margin-top:12px;">
+            <span class="mat-pill">Quadro branco para retomada das dúvidas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AVALIAÇÃO -->
+    <div class="secao">
+      <div class="secao-titulo">
+        <div class="secao-titulo-num">2</div>
+        <h2>Instrumentos de Avaliação</h2>
+      </div>
+      <table class="avaliacao-table">
+        <thead>
+          <tr>
+            <th style="width:35%">Instrumento</th>
+            <th style="width:45%">Critério observado</th>
+            <th style="width:20%">Caráter</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Observação diagnóstica — participação oral</td>
+            <td>Capacidade de conectar exemplos do cotidiano aos níveis de organização</td>
+            <td><span class="tag-formativa">Diagnóstica</span></td>
+          </tr>
+          <tr>
+            <td>Mapa mental individual no caderno</td>
+            <td>Presença dos 7 níveis; ao menos 1 exemplo por nível; uso de 2 cores (biótico/abiótico)</td>
+            <td><span class="tag-formativa">Formativa</span></td>
+          </tr>
+          <tr>
+            <td>Pergunta de saída oral</td>
+            <td>Qualidade da reflexão sobre pertencimento a níveis de organização</td>
+            <td><span class="tag-formativa">Formativa</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- DIFERENCIAÇÃO -->
+    <div class="secao">
+      <div class="secao-titulo">
+        <div class="secao-titulo-num">3</div>
+        <h2>Diferenciação Curricular — Educação Inclusiva</h2>
+      </div>
+      <p style="font-size:11.5px; color:var(--cinza-medio); margin-bottom:12px; font-style:italic;">A ausência de laudo não impede adaptações (Lei nº 14.254/2021). Foco na eliminação de barreiras de aprendizagem, não no diagnóstico clínico.</p>
+
+      <div class="dif-item dif-tea">
+        <div class="dif-label">TEA — Transtorno do Espectro Autista</div>
+        Entregue mapa pré-estruturado com círculos concêntricos impressos. Antecipe a agenda da aula por escrito ou cartão. Ofereça escolhas reduzidas de exemplos (2 opções por nível). Permita resposta em tópicos ou esquemas visuais.
+      </div>
+      <div class="dif-item dif-tdah">
+        <div class="dif-label">TDAH — Déficit de Atenção e Hiperatividade</div>
+        Fragmente em 7 cartões sequenciados (1 por nível). Entregue um cartão por vez com feedback imediato. Permita movimentação: distribuir material, ser secretário da lousa. Use timer visual de 5 minutos entre etapas.
+      </div>
+      <div class="dif-item dif-dv">
+        <div class="dif-label">Deficiência Visual — Baixa Visão e Cegueira</div>
+        Mapa tátil com barbante colado em papelão; etiquetas em Braille ou fonte 18+. Verbalize tudo escrito na lousa. Use âncoras sonoras por nível (palmada = organismo; vozes juntas = população). Para baixa visão: material A3 alto contraste.
+      </div>
+      <div class="dif-item dif-da">
+        <div class="dif-label">Deficiência Auditiva — Surdez e Baixa Audição</div>
+        Posicione na frente; nunca fale de costas. Use cartela colorida com fotos reais de cada nível. Instrução via texto + imagem simultâneos. Atividade de correspondência: foto ↔ nome do nível. Solicite intérprete de Libras quando disponível.
+      </div>
+      <div class="dif-item dif-dislexia">
+        <div class="dif-label">Dislexia e Transtornos de Aprendizagem</div>
+        Álbum A5 com imagens representativas e espaço para colagem ou desenho. Material em fonte sem serifa, mínimo 12pt, espaçamento 1,5. Aceite respostas orais gravadas no celular. Conceda 30% de tempo adicional.
+      </div>
+    </div>
+
+  </div><!-- /coluna-principal -->
+
+  <!-- COLUNA LATERAL -->
+  <div class="coluna-lateral">
+
+    <!-- TIMELINE -->
+    <div class="lateral-card">
+      <div class="lateral-card-titulo"><span></span>Cronograma da Aula</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--verde-medio)"></div>
+          <div class="tl-tempo">0–10 min</div>
+          <div class="tl-nome">Roda de conversa</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--azul-bio)"></div>
+          <div class="tl-tempo">10–30 min</div>
+          <div class="tl-nome">Mapa mental coletivo</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--terra)"></div>
+          <div class="tl-tempo">30–45 min</div>
+          <div class="tl-nome">Registro individual</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--coral)"></div>
+          <div class="tl-tempo">45–50 min</div>
+          <div class="tl-nome">Síntese e encerramento</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NIVEIS -->
+    <div class="lateral-card">
+      <div class="lateral-card-titulo"><span></span>Hierarquia dos Níveis</div>
+      <div class="niveis-visual">
+        <div class="nivel-item" style="background:#E8F5EE;">
+          <div class="nivel-bolinha n1"></div>
+          <div class="nivel-nome">Organismo</div>
+          <div class="nivel-desc">Ex: capivara</div>
+        </div>
+        <div class="nivel-item" style="background:#EBF6F1;">
+          <div class="nivel-bolinha n2"></div>
+          <div class="nivel-nome">População</div>
+          <div class="nivel-desc">mesma espécie</div>
+        </div>
+        <div class="nivel-item" style="background:#EEF7EC;">
+          <div class="nivel-bolinha n3"></div>
+          <div class="nivel-nome">Comunidade</div>
+          <div class="nivel-desc">todas as espécies</div>
+        </div>
+        <div class="nivel-item" style="background:#F1F7E8;">
+          <div class="nivel-bolinha n4"></div>
+          <div class="nivel-nome">Ecossistema</div>
+          <div class="nivel-desc">+ fatores abióticos</div>
+        </div>
+        <div class="nivel-item" style="background:#FAF3E0;">
+          <div class="nivel-bolinha n5"></div>
+          <div class="nivel-nome">Bioma</div>
+          <div class="nivel-desc">Ex: Cerrado, Pampa</div>
+        </div>
+        <div class="nivel-item" style="background:#FCEAEA;">
+          <div class="nivel-bolinha n6"></div>
+          <div class="nivel-nome">Biosfera</div>
+          <div class="nivel-desc">toda a vida na Terra</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONCEITOS CHAVE -->
+    <div class="lateral-card">
+      <div class="lateral-card-titulo"><span></span>Conceitos-Chave</div>
+      <div class="conceito-pair">
+        <div class="conceito-card habitat">
+          <div class="conceito-emoji">🏠</div>
+          <div class="conceito-titulo">Habitat</div>
+          <div class="conceito-sub">Analogia</div>
+          <div class="conceito-destaque azul">"Endereço"</div>
+        </div>
+        <div class="conceito-card nicho">
+          <div class="conceito-emoji">💼</div>
+          <div class="conceito-titulo">Nicho Ecológico</div>
+          <div class="conceito-sub">Analogia</div>
+          <div class="conceito-destaque terra">"Profissão"</div>
+        </div>
+      </div>
+      <div style="background:var(--cinza-palido); border-radius:6px; padding:9px 11px; font-size:11px; color:var(--cinza-medio); line-height:1.45;">
+        <strong style="color:var(--cinza-escuro);">Princípio de Gause:</strong> Duas espécies nunca ocupam exatamente o mesmo nicho por tempo prolongado — a competitivamente superior elimina ou desloca a outra.
+      </div>
+    </div>
+
+    <!-- SOCIOEMOCIONAL -->
+    <div class="lateral-card">
+      <div class="lateral-card-titulo"><span></span>Desenvolvimento Socioemocional</div>
+      <div class="socio-badge">🔍 Curiosidade para aprender</div>
+      <p style="font-size:11.5px; color:var(--cinza-medio); line-height:1.45;">Estimular o interesse genuíno pelo tema por meio de atividades que conectam o conteúdo à realidade próxima dos estudantes — pergunta disparadora, exemplos locais e pergunta de saída reflexiva.</p>
+    </div>
+
+    <!-- COMPETÊNCIAS -->
+    <div class="lateral-card">
+      <div class="lateral-card-titulo"><span></span>Competências e TCTs</div>
+      <div class="comp-item">
+        <span class="comp-tag">CG2</span>
+        <span class="comp-desc">Pensamento Científico — curiosidade intelectual e investigação de causas</span>
+      </div>
+      <div class="comp-item">
+        <span class="comp-tag" style="background:var(--verde-palido); color:var(--verde-escuro);">TCT</span>
+        <span class="comp-desc">Educação Ambiental — consciência crítica sobre preservação da biodiversidade</span>
+      </div>
+    </div>
+
+    <!-- REFERÊNCIAS -->
+    <div class="lateral-card">
+      <div class="lateral-card-titulo"><span></span>Referências e Recursos</div>
+      <div style="font-size:11px; color:var(--cinza-medio); line-height:1.6;">
+        <p style="margin-bottom:5px;">📖 Begon, Townsend & Harper — <em>Ecologia: De indivíduos a ecossistemas</em></p>
+        <p style="margin-bottom:5px;">📖 Odum & Barrett — <em>Fundamentos de Ecologia</em></p>
+        <p style="margin-bottom:5px;">🎮 Wordwall / Kahoot — fixação digital (opcional)</p>
+        <p>🎥 BBC Brasil — vídeos curtos para contextualização de espécies</p>
+      </div>
+    </div>
+
+  </div><!-- /coluna-lateral -->
+
+</div><!-- /main -->
+
+<!-- RODAPÉ -->
+<div class="footer">
+  <span><strong>Plano de Aula</strong> · Código 1EM-T1-A01 · Biologia · 1ª Série do Ensino Médio · 1º Trimestre 2026</span>
+  <span>Professor Tranquilo · Ciências da Natureza</span>
+</div>
+
+</body>
+</html>

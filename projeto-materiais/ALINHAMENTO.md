@@ -60,6 +60,30 @@ Problemas:
 - Etapa prioritária: Fundamental anos finais (6º–9º); Médio em segundo plano.
 - Conceito pedagógico próximo: Desenho Universal para a Aprendizagem (DUA) — avaliar uso na comunicação.
 
+## Modelos de plano de aula (referências em `referencias/planos-aula/`)
+
+O autor já vinha desenvolvendo um "Sistema Base & Autoria" de planos de aula em HTML (A4, pronto para PDF).
+
+| Versão | Arquivo | Destaques |
+|---|---|---|
+| v1 | `v1-1EM-T1-A01-ecologia.html` | 50 min, 4 momentos com passo a passo, tabela de avaliação, diferenciação por 5 perfis (TEA, TDAH, DV, DA, dislexia), competência geral, TCT, socioemocional, materiais por momento. Rodapé "Professor Tranquilo". |
+| v2 | `v2a-…` / `v2b-…-gemini` | 100 min, Saber/Fazer/Sentir, Trilha Alfa (essencial) + Trilha Beta (ENEM / investigativo), rubrica 🟢🟡🔴, dica de trincheira, esquema da lousa, material do aluno. |
+| v3 (mais madura) | `v3-1EM-A01-digital.html` / `-impressao.html` | 4 metodologias à escolha do professor (Expositiva, Raio-X ENEM, Prática visual impressa, Investigação), inclusão cruzada com metodologia + AEE, conexão digital (só na versão digital), atividade do aluno com infográfico para colorir (gerado no NotebookLM, embutido em base64 ≈3,4 MB). |
+
+**Decisão sugerida:** v3 como base do modelo, incorporando da v1 competências gerais/TCT/socioemocional,
+materiais por momento e perfis DV/DA/dislexia; e garantindo o material do aluno SEMPRE em par
+(versão convencional + versão adaptada do mesmo conteúdo).
+
+Problemas a corrigir antes de vender:
+
+- Questão rotulada "ENEM 2021" está parafraseada ("...") — conferir texto oficial ou retirar o rótulo.
+- Imagem com marca d'água do NotebookLM; arquivos de 3,4 MB por plano (comprimir imagem).
+- Inglês/PT-PT vazando: "depressions", "characteristic" (v2b), "actuar" (v1); v1 diz "7 níveis" e lista 6.
+- Nota legal da v1 cita Lei 14.254/2021 para "laudo não é obrigatório" — conferir a base legal correta.
+- Rubrica "Atenção" da v3 com exemplo jocoso (dinossauros) — trocar por erro conceitual real.
+- Esquema de códigos diverge entre planilha (EM01-BIO-A01) e planos (1EM-A01, 1EM-T1-A01) — unificar.
+- Link de documentário da Netflix exige assinatura — oferecer alternativa gratuita.
+
 ## Pendências guardadas para depois
 
 - Análise de nicho e redes sociais (Instagram, carrosséis, Reels, perfil, vendas).

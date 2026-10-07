@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Plano de Aula · 1EM-A01 · Sistema Base &amp; Autoria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #F6F8F5; /* Off-white linho com toque verde sálvia muito suave */
+            --primary-green: #1B4332; /* Verde floresta profundo para títulos e autoridade */
+            --alfa-sage: #40916C; /* Verde sálvia ativo para a Trilha Alfa */
+            --alfa-light: #F2F9F5; /* Fundo suave para os blocos Alfa */
+            --beta-earth: #A3704C; /* Tom terroso/argila sofisticado para as bifurcações Beta */
+            --beta-light: #FAF5F0; /* Fundo suave para os blocos Beta */
+            --text-dark: #212529; /* Carvão moderno para leitura fluida */
+            --text-muted: #495057; /* Cinza médio para metadados */
+            --border-neutral: #DEE2E6; /* Linhas finas e elegantes */
+        }
+
+        @page {
+            size: A4;
+            margin: 12mm 12mm;
+            background-color: #F6F8F5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', Arial, sans-serif !important; /* Elimina qualquer vestígio de Times New Roman globalmente */
+        }
+
+        body {
+            background-color: var(--bg-page);
+            color: var(--text-dark);
+            font-size: 10.5pt;
+            line-height: 1.5;
+        }
+
+        h1 {
+            font-size: 22pt;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 6px;
+            font-weight: 700;
+            page-break-after: avoid;
+        }
+
+        h2 {
+            font-size: 14pt;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+            font-weight: 700;
+            page-break-after: avoid;
+        }
+
+        h3 {
+            font-size: 11.5pt;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 6px;
+            page-break-after: avoid;
+        }
+
+        p {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+
+        .avoid-break {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        /* MASTER HEADER BLOCK */
+        .header-block {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 24px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+            width: 100%;
+        }
+
+        .header-tagline {
+            font-size: 8.5pt;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #A3E635; /* Destaque sutil em verde claro */
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .header-meta-text {
+            font-size: 11pt;
+            color: #E8F5E9;
+            margin-bottom: 16px;
+        }
+
+        .bncc-strip {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-left: 4px solid var(--alfa-sage);
+            padding: 12px;
+            font-size: 9.5pt;
+            line-height: 1.4;
+            border-radius: 0 4px 4px 0;
+            margin-bottom: 18px;
+        }
+
+        .expectativas-container {
+            display: table;
+            width: 100%;
+            margin-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 12px;
+        }
+
+        .expectation-column {
+            display: table-cell;
+            width: 33.33%;
+            padding-right: 14px;
+            vertical-align: top;
+        }
+
+        .expectation-column:last-child {
+            padding-right: 0;
+        }
+
+        .expectation-label {
+            font-size: 8.5pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #A5D6A7;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .expectation-value {
+            font-size: 9.5pt;
+            color: #F8FAFC;
+            line-height: 1.4;
+        }
+
+        /* CENTERING & COLUMNS RECONSTRUCTION */
+        .content-table {
+            display: table;
+            width: 100%; /* Ocupa 100% da área útil do papel, eliminando folgas à esquerda */
+            border-spacing: 0;
+            table-layout: fixed;
+        }
+
+        .column-main {
+            display: table-cell;
+            width: 65%;
+            padding-right: 20px;
+            vertical-align: top;
+        }
+
+        .column-sidebar {
+            display: table-cell;
+            width: 35%;
+            vertical-align: top;
+        }
+
+        .section-separator {
+            margin-bottom: 24px;
+        }
+
+        .section-headline {
+            border-left: 4px solid var(--primary-green);
+            padding-left: 10px;
+            margin-bottom: 12px;
+        }
+
+        .box-card {
+            background-color: white;
+            border: 1px solid var(--border-neutral);
+            padding: 16px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+
+        /* TRILHA ALFA */
+        .alfa-card {
+            background-color: var(--alfa-light);
+            border-left: 4px solid var(--alfa-sage);
+            padding: 14px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 12px;
+        }
+
+        .alfa-timestamp {
+            font-size: 9pt;
+            font-weight: bold;
+            color: var(--alfa-sage);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        /* TRILHA BETA */
+        .beta-card {
+            background-color: var(--beta-light);
+            border: 1px solid var(--beta-earth);
+            padding: 14px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        .beta-headline {
+            color: var(--beta-earth);
+            font-size: 11pt;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        /* SIDEBAR COMPONENTS */
+        .sidebar-card {
+            background-color: white;
+            border: 1px solid var(--border-neutral);
+            padding: 14px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+
+        .sidebar-headline {
+            font-size: 10.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary-green);
+            border-bottom: 1px solid var(--border-neutral);
+            padding-bottom: 6px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .timeline-list {
+            list-style: none;
+        }
+
+        .timeline-step {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 10px;
+            font-size: 9.5pt;
+            border-left: 2px solid var(--alfa-sage);
+        }
+
+        .timeline-step span {
+            display: block;
+            font-weight: bold;
+            color: var(--alfa-sage);
+            font-size: 8.5pt;
+        }
+
+        .board-simulation {
+            background-color: var(--primary-green);
+            color: #F4FBF7;
+            padding: 14px;
+            border-radius: 4px;
+            font-size: 9pt;
+            line-height: 1.4;
+        }
+
+        .board-simulation ul {
+            padding-left: 14px;
+            margin-top: 6px;
+        }
+
+        .board-simulation li {
+            margin-bottom: 6px;
+        }
+
+        .board-alert {
+            color: #FF8A8A;
+            font-weight: bold;
+        }
+
+        .inclusion-badge {
+            display: inline-block;
+            font-size: 8.5pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-bottom: 6px;
+        }
+        
+        .badge-tea { background-color: #E0F2FE; color: #0369A1; }
+        .badge-tdah { background-color: #FEF3C7; color: #B45309; }
+        .badge-di { background-color: #F3E8FF; color: #6B21A8; }
+
+        /* ABSOLUTE STUDENT SECTION ISOLATION */
+        .student-section {
+            margin-top: 35px;
+            border-top: 2px dashed var(--text-dark);
+            padding-top: 25px;
+            page-break-before: always !important; /* Força a quebra absoluta para a última página */
+            break-before: page !important;
+        }
+
+        .student-header {
+            text-align: center;
+            border-bottom: 2px solid var(--text-dark);
+            padding-bottom: 8px;
+            margin-bottom: 18px;
+        }
+
+        .student-header h2 {
+            color: var(--text-dark);
+            font-size: 16pt;
+            font-weight: 700;
+        }
+
+        .student-summary-list {
+            margin-left: 18px;
+            margin-bottom: 20px;
+            font-size: 10pt;
+        }
+
+        .student-summary-list li {
+            margin-bottom: 6px;
+        }
+
+        .student-questions {
+            margin-left: 20px;
+            font-size: 10.5pt;
+        }
+
+        .student-questions li {
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-block avoid-break">
+        <div class="header-tagline">Sistema Base &amp; Autoria · Alison Munhos</div>
+        <h1>O Universo e a Terra Primitiva</h1>
+        <div class="header-meta-text">Código: <strong>1EM-A01</strong> | 1ª Série | Formação geral e condições iniciais da vida</div>
+        
+        <div class="bncc-strip">
+            <strong>Habilidade BNCC (EM13CNT201):</strong> Analisar e discutir modelos, teorias e leis propostos em diferentes épocas e culturas para comparar distintas explicações sobre o surgimento e a evolução da Vida, da Terra e do Universo com as teorias científicas aceitas atualmente.
+        </div>
+        
+        <div class="expectativas-container">
+            <div class="expectation-column">
+                <div class="expectation-label">Saber (Conceitual)</div>
+                <div class="expectation-value">Descrever as condições extremas da Terra primitiva, reconhecendo a composição da atmosfera incipiente e o processo de resfriamento global que possibilitou os oceanos.</div>
+            </div>
+            <div class="expectation-column">
+                <div class="expectation-label">Fazer (Procedimental)</div>
+                <div class="expectation-value">Construir uma linha do tempo lógica e sequencial, ordenando os eventos geológicos e climáticos desde o estado incandescente.</div>
+            </div>
+            <div class="expectation-column">
+                <div class="expectation-label">Sentir / Agir (Atitudinal)</div>
+                <div class="expectation-value">Desenvolver postura reflexiva e pensamento crítico frente aos processos de transformação da matéria e da energia ao longo do tempo.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-table">
+        
+        <div class="column-main">
+            
+            <div class="section-separator">
+                <div class="section-headline">
+                    <h2>1. Fundamentos Teóricos</h2>
+                </div>
+                <div class="box-card">
+                    <p>A base científica atual sustenta que a Terra se formou há aproximadamente 4,5 bilhões de anos por meio da aglomeração de poeira e rochas espaciais. Em seu estágio inicial, o planeta consistia em uma esfera de material incandescente, submetida a um intenso bombardeio de meteoros e a uma atividade vulcânica ininterrompida. Devido às altíssimas temperaturas, a água existia exclusivamente no estado gasoso, impossibilitando a vida.</p>
+                    <p>A intensa atividade vulcânica foi a força motriz para a liberação dos gases que compuseram a atmosfera primitiva: vapor d'água, amônia, metano e gás hidrogênio. O pilar fundamental dessa aula é a demonstração de que esta atmosfera tinha caráter redutor, ou seja, era ausente de gás oxigênio livre (O2) e, consequentemente, não possuía camada de ozônio. A ausência desse filtro permitia que a radiação ultravioleta atingisse a superfície do planeta com extrema intensidade, atuando como uma imensa fonte de energia para futuras reações químicas.</p>
+                    <p style="margin-bottom: 0;">Ao longo de milhões de anos, o lento resfriamento da crosta terrestre permitiu que o vapor d'água finalmente começasse a se condensar. Esse fenômeno gerou chuvas torrenciais prolongadas que, ao atingirem a superfície rochosa ainda quente, evaporavam e condensavam sucessivamente. Quando a temperatura estabilizou-se abaixo do ponto de ebulição, a água se acumulou em vastas depressions, arrastando minerais das rochas e dando origem aos oceanos primitivos – um "caldo primordial" energético e fundamental para as primeiras sínteses moleculares.</p>
+                </div>
+            </div>
+
+            <div class="section-separator">
+                <div class="section-headline">
+                    <h2>2. A Trilha Alfa (Sobrevivência)</h2>
+                </div>
+                
+                <div class="alfa-card avoid-break">
+                    <span class="alfa-timestamp">00-10 min | O Gancho</span>
+                    <p style="margin-bottom:0;">Apresente o seguinte cenário sem uso de recursos visuais: <em>"Se uma máquina do tempo nos levasse para a Terra exata de 4,5 bilhões de anos atrás e abríssemos a porta, o que nos destruiria primeiro: o chão derretido, a falta de ar respirável ou a radiação do sol?"</em></p>
+                </div>
+
+                <div class="alfa-card avoid-break">
+                    <span class="alfa-timestamp">10-40 min | Construção Teórica</span>
+                    <p style="margin-bottom:0;">Utilize a lousa para traçar a evolução do cenário. Escreva "Terra: 4,5 bilhões de anos". Desenhe vulcões ativos. Aponte setas para cima indicando os gases (Vapor de água, Metano, Amônia, Hidrogênio) e frise com uma marcação forte: <strong>"Zero Oxigênio"</strong>. Desenhe uma linha do tempo mostrando a queda de temperatura, a formação das nuvens, a precipitação e a formação dos primeiros oceanos (sopa primordial).</p>
+                </div>
+
+                <div class="alfa-card avoid-break">
+                    <span class="alfa-timestamp">40-90 min | Prática Básica (Linha do Tempo)</span>
+                    <p style="margin-bottom:0;">Divida a turma em grupos de 4 alunos. Entregue cartões em branco. O desafio é que cada grupo escreva e ordene 5 eventos cronológicos obrigatórios: 1. Esfera de Fogo (Vulcanismo); 2. Liberação de Gases (Atmosfera Primitiva); 3. Resfriamento da Crosta; 4. Condensação (Chuvas); 5. Formação dos Oceanos. Os grupos devem mediar internamente a discussão para provar por que um evento só poderia acontecer após o anterior.</p>
+                </div>
+
+                <div class="alfa-card avoid-break">
+                    <span class="alfa-timestamp">90-100 min | Fechamento</span>
+                    <p style="margin-bottom:0;">Peça que os grupos olhem a sequência. Sistematize evidenciando que o planeta não estava sendo "hostil" à vida, mas sim funcionando como um imenso laboratório químico, preparando os reagentes (gases e minerais) e a energia (calor e raios) para a próxima etapa.</p>
+                </div>
+            </div>
+
+            <div class="section-separator">
+                <div class="section-headline">
+                    <h2>3. A Trilha Beta (Bifurcações)</h2>
+                </div>
+                
+                <div class="beta-card avoid-break">
+                    <div class="beta-headline">Módulo Foco ENEM / Vestibular</div>
+                    <p style="margin-bottom: 0;">Dinâmica de resolução colaborativa baseada no banco de dados dos últimos 3 anos do exame. Escreva uma questão clássica que exija correlacionar a atmosfera redutora (ausência de O2) com a inexistência da camada de ozônio, justificando a incidência de radiação UV como fonte de energia. Debata o distrator comum que induz o aluno a achar que os primeiros organismos já respiravam oxigênio.</p>
+                </div>
+
+                <div class="beta-card avoid-break">
+                    <div class="beta-headline">Módulo Investigativo (Baixo Custo)</div>
+                    <p style="margin-bottom: 0;">Experimento de simulação termodinâmica. Coloque água fervente em um béquer ou copo de vidro transparente (representando o vulcanismo e vapor). Cubra com um pires de vidro contendo pedras de gelo na parte superior (representando a atmosfera resfriando). Os alunos observarão em minutos a rápida condensação e a "chuva primitiva" caindo de volta no recipiente.</p>
+                </div>
+            </div>
+
+            <div class="section-separator">
+                <div class="section-headline">
+                    <h2>4. Avaliação Formativa</h2>
+                </div>
+                <div class="box-card avoid-break">
+                    <p style="font-size: 9.5pt; color: var(--text-muted); font-style: italic; margin-bottom: 12px; border-left: 2px solid var(--alfa-sage); padding-left: 6px;">
+                        <strong>Propósito Pedagógico:</strong> Esta seção funciona como um "termômetro de aula" rápido e dinâmico, permitindo ao professor diagnosticar em tempo real a assimilação dos conceitos centrais antes do término do período letivo, guiando intervenções na semana seguinte.
+                    </p>
+                    <p><strong>Questão Rápida (Exit Ticket):</strong> Considerando a composição da atmosfera original e as temperaturas extremas da crosta, explique qual fenômeno físico foi obrigatório para que os oceanos primitivos pudessem surgir.</p>
+                    
+                    <div class="rubric-row">
+                        <p>🟢 <strong>Pleno:</strong> Associa explicitamente o resfriamento do planeta à condensação do vapor d'água, explicando que apenas a queda de temperatura permitiu a transição do estado gasoso para a água líquida que formou os oceanos.</p>
+                        <p>🟡 <strong>Parcial:</strong> Cita que a temperatura diminuiu e choveu, mas falha em conectar o conceito físico da condensação como mecanismo transformador do vapor vulcânico.</p>
+                        <p>🔴 <strong>Atenção:</strong> Afirma que a água já existia no estado líquido desde o início ou alega que os gases se misturaram para "fabricar" a água do nada, ignorando o ciclo termodinâmico.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-separator">
+                <div class="section-headline">
+                    <h2>5. Diferenciação Curricular</h2>
+                </div>
+                <div class="box-card avoid-break">
+                    <div class="inclusion-badge badge-tea">Laudo: TEA</div>
+                    <p style="margin-bottom: 10px; font-size: 9.5pt;">Ajuste de complexidade e estímulos. Reduza a abstração temporal profunda. Entregue um fluxograma visual em papel onde o aluno apenas relacione causa e efeito diretos: <code>[Vulcão/Calor] &rarr; [Nuvem/Gás] &rarr; [Gelo/Frio] &rarr; [Chuva/Oceano]</code>. Mantenha a previsibilidade focando no processo contínuo de esfriar e molhar.</p>
+                    
+                    <div class="inclusion-badge badge-tdah" style="margin-top: 5px;">Laudo: TDAH</div>
+                    <p style="margin-bottom: 10px; font-size: 9.5pt;">Ajuste de temporalidade e quantidade. Fracione a linha do tempo da Trilha Alfa. Dê comandos de apenas uma etapa por vez ("Nos próximos 10 minutos, foquem apenas no vulcanismo e anotem. Pausa. Agora, foquem apenas no resfriamento"). O dinamismo do "Experimento do Béquer" atua como forte âncora atencional substituta.</p>
+                    
+                    <div class="inclusion-badge badge-di" style="margin-top: 5px;">Laudo: Deficiência Intelectual</div>
+                    <p style="margin-bottom: 0; font-size: 9.5pt;">Ajuste de complexidade. Elimine as fórmulas químicas (CH4, NH3). Concentre o foco da aula no conceito físico irreversível da água (muito calor = vapor; esfriou = líquido), utilizando a observação prática para solidificar que o oceano precisava do frio para nascer da chuva.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="column-sidebar">
+            
+            <div class="sidebar-card avoid-break">
+                <div class="sidebar-headline">Cronograma</div>
+                <ul class="timeline-list">
+                    <li class="timeline-step"><span>00-10 min</span>O Gancho Inicial</li>
+                    <li class="timeline-step"><span>10-40 min</span>Construção Teórica</li>
+                    <li class="timeline-step"><span>40-90 min</span>Prática Ativa (Alfa/Beta)</li>
+                    <li class="timeline-step"><span>90-100 min</span>Fechamento e Exit Ticket</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card avoid-break">
+                <div class="sidebar-headline">Dica de Trincheira</div>
+                <p style="font-size: 9.5pt; margin-bottom: 0;">O erro clássico do aluno do Ensino Médio é assumir que sempre houve oxigênio. Use a analogia da <strong>Panela de Pressão</strong>. A Terra era uma panela lacrada, fervendo e sem ar puro. Você precisa "desligar o fogo" (resfriar o planeta) para a água parar de vaporizar e formar poças. Só muito tempo depois é que seres microscópicos iriam libertar oxigênio.</p>
+            </div>
+
+            <div class="sidebar-card avoid-break">
+                <div class="sidebar-headline">Esquema da Lousa</div>
+                <div class="board-simulation">
+                    <strong>A TERRA DE FOGO:</strong><br>Formação (4,5 bi anos) e Vulcanismo Extremo.
+                    <br><br>
+                    <strong>A ATMOSFERA ORIGINAL:</strong><br>Vapor d'água, CH4, NH3, H2.<br>
+                    <span class="board-alert">[MUITO IMPORTANTE: Sem O2 livre / Sem Ozônio].</span>
+                    <br><br>
+                    <strong>A TRANSIÇÃO:</strong><br>Resfriamento &rarr; Condensação &rarr; Chuvas Diluvianas.
+                    <br><br>
+                    <strong>O RESULTADO:</strong><br>Oceanos Primitivos (Sopa Primordial rica em minerais e energia).
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="student-section avoid-break">
+        <div class="sidebar-card" style="border: 2px solid var(--text-dark); padding: 20px;">
+            <div class="student-header">
+                <h2>MATERIAL DE APOIO DO ALUNO</h2>
+                <div style="font-size: 9.5pt; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-top: 4px;">Componente: CNT-MT · Tema: A Terra Primitiva e os Oceanos</div>
+            </div>
+            
+            <h3 style="margin-bottom: 8px;">📍 Resumo Essencial</h3>
+            <ul class="student-summary-list">
+                <li><strong>Início Caótico (4,5 bilhões de anos):</strong> A Terra começou como uma esfera incandescente, varrida por asteroides e vulcanismo extremo.</li>
+                <li><strong>Primeira Atmosfera:</strong> Vulcões expeliam vapor d'água, amônia, metano e hidrogênio. Não havia oxigênio respirável (O2) nem camada de ozônio.</li>
+                <li><strong>Radiação e Energia:</strong> Sem ozônio, raios ultravioleta atingiam o solo violentamente, fornecendo imensa energia química.</li>
+                <li><strong>A Era do Resfriamento:</strong> Com o tempo, a crosta terrestre esfriou, permitindo que o vapor d'água sofresse condensação.</li>
+                <li><strong>Os Oceanos Primordiais:</strong> Chuvas torrenciais duraram milhões de anos. A água se acumulou nas crateras, originando um oceano quente, rico em minerais e atingido por raios — o ambiente exato para o início da evolução química da vida.</li>
+            </ul>
+
+            <h3 style="margin-top: 18px; margin-bottom: 10px;">📝 Questões de Fixação</h3>
+            <ol class="student-questions">
+                <li>Do ponto de vista fisiológico humano atual, qual characteristic da atmosfera primitiva tornaria a nossa sobrevivência instantaneamente impossível?</li>
+                <li>Explique, usando conceitos de estados físicos da matéria, por que não havia oceanos líquidos nos primeiros milhões de anos da Terra.</li>
+                <li>Considerando a ausência da camada de ozônio, como a intensa radiação ultravioleta que atingia a Terra atuou como fator fundamental na sopa primordial oceânica?</li>
+            </ol>
+        </div>
+    </div>
+
+</body>
+</html>
