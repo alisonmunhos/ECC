@@ -27,7 +27,7 @@ B07,"Movimento: ossos, músculos e nervos",3,CIE6-B07-A03,EF06-CIE-A26,RESUMO: A
 B07,"Movimento: ossos, músculos e nervos",4,CIE6-B07-A04,EF06-CIE-A27,OFICINA E FEIRA DE CIÊNCIAS,oficina,EF06CI07; EF06CI08; EF06CI09,
 B08,A Terra no espaço: forma e movimentos,1,CIE6-B08-A01,EF06-CIE-A29,ROTAÇÃO E TRANSLAÇÃO,aula,EF06CI14,
 B08,A Terra no espaço: forma e movimentos,2,CIE6-B08-A02,—,EVIDÊNCIAS DE QUE A TERRA É REDONDA,nova,EF06CI13,"LACUNA: criar aula (navios no horizonte, sombra na Lua, fotos do espaço)"
-B08,A Terra no espaço: forma e movimentos,3,CIE6-B08-A03,EF06-CIE-A30,FORMA DA TERRA E AS ESTAÇÕES,aula,EF06CI14,Hoje mistura forma da Terra e estações; separar a parte de esfericidade para NOVA1
+B08,A Terra no espaço: forma e movimentos,3,CIE6-B08-A03,EF06-CIE-A30,FORMA DA TERRA E AS ESTAÇÕES,aula,EF06CI14,Hoje mistura forma da Terra e estações; separar a parte de esfericidade para CIE6-B08-A02
 B08,A Terra no espaço: forma e movimentos,4,CIE6-B08-A04,—,A SOMBRA DO GNÔMON,nova,EF06CI14,LACUNA: criar aula prática com vara/gnômon ao longo do dia
 B09,"Estrutura da Terra, rochas e fósseis",1,CIE6-B09-A01,EF06-CIE-A31,O INTERIOR DA TERRA,aula,EF06CI11,
 B09,"Estrutura da Terra, rochas e fósseis",2,CIE6-B09-A02,EF06-CIE-A32,LITOSFERA E ROCHAS,aula,EF06CI12,
@@ -40,6 +40,6 @@ AMP,Ampliação: clima e sustentabilidade (BNCC do 7º ano),2,CIE6-AMP-A02,EF06-
 AMP,Ampliação: clima e sustentabilidade (BNCC do 7º ano),3,CIE6-AMP-A03,EF06-CIE-A39,A CAMADA DE OZÔNIO,ampliação,EF07CI14,Repete no 7º (A33–A34)
 AMP,Ampliação: clima e sustentabilidade (BNCC do 7º ano),4,CIE6-AMP-A04,EF06-CIE-A40,SUSTENTABILIDADE E AÇÃO CIDADÃ,ampliação,EF07CI13,
 AMP,Ampliação: clima e sustentabilidade (BNCC do 7º ano),5,CIE6-AMP-A05,EF06-CIE-A41,OFICINA DE CLIMATOLOGIA E SUSTENTABILIDADE,ampliação,EF07CI13,
-AVA,Revisões e avaliações (usar ao fim dos blocos indicados),1,CIE6-AVA-A01,EF06-CIE-A14,AVALIAÇÃO FINAL DO 1º TRIMESTRE,avaliação,EF06CI01–04,Ligada aos blocos B01–B03
-AVA,Revisões e avaliações (usar ao fim dos blocos indicados),2,CIE6-AVA-A02,EF06-CIE-A28,AVALIAÇÃO FINAL DO 2º TRIMESTRE,avaliação,EF06CI05–10,Ligada aos blocos B04–B07
-AVA,Revisões e avaliações (usar ao fim dos blocos indicados),3,CIE6-AVA-A03,EF06-CIE-A42,AVALIAÇÃO FINAL DO 3º TRIMESTRE,avaliação,EF06CI11–14,Ligada aos blocos B08–B10
+AVA,Revisões e avaliações (usar ao fim dos blocos indicados),1,CIE6-AVA-A01,EF06-CIE-A14,REVISÃO: MATÉRIA E MATERIAIS (B01–B03),avaliação,EF06CI01–04,Ligada aos blocos B01–B03
+AVA,Revisões e avaliações (usar ao fim dos blocos indicados),2,CIE6-AVA-A02,EF06-CIE-A28,REVISÃO: CORPO HUMANO (B04–B07),avaliação,EF06CI05–10,Ligada aos blocos B04–B07
+AVA,Revisões e avaliações (usar ao fim dos blocos indicados),3,CIE6-AVA-A03,EF06-CIE-A42,REVISÃO: TERRA (B08–B10),avaliação,EF06CI11–14,Ligada aos blocos B08–B10
