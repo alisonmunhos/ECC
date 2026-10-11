@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>CIE6-B01-A03 · Misturas e fases</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #1B4332; --verde-medio: #2D6A4F; --salvia: #40916C; --salvia-claro: #EEF7F1;
+    --terra: #A3704C; --terra-claro: #FAF4EE; --tinta: #1F2421; --cinza: #5C635F;
+    --linha: #D9DED9; --papel: #FFFFFF;
+  }
+  @page {
+    size: A4; margin: 13mm 13mm 15mm;
+    @bottom-left { content: "[NOME DA MARCA] · CIE6-B01-A03"; font: 8pt 'DM Sans', sans-serif; color: #8A918C; }
+    @bottom-right { content: counter(page) " / " counter(pages); font: 8pt 'DM Sans', sans-serif; color: #8A918C; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', Arial, sans-serif; font-size: 9.3pt; line-height: 1.4; color: var(--tinta);
+         -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1, h2 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; }
+  .pagina { break-after: page; }
+  .pagina:last-child { break-after: auto; }
+  .evitar { break-inside: avoid; }
+
+  /* Cabeçalho do plano */
+  .topo { background: var(--verde); color: #fff; border-radius: 8px; padding: 13px 18px; }
+  .topo .rotulo { font-size: 7.5pt; letter-spacing: 1.6px; text-transform: uppercase; color: #B7E4C7; font-weight: 700; }
+  .topo h1 { font-size: 22pt; line-height: 1.1; margin: 4px 0 2px; }
+  .topo .sub { color: #D8F3DC; font-style: italic; }
+  .topo .meta { margin-top: 8px; font-size: 8.5pt; color: #E9F5EC; }
+  .topo .meta b { color: #fff; }
+  .bncc { margin-top: 10px; background: rgba(255,255,255,.08); border-left: 3px solid #95D5B2; padding: 8px 10px; font-size: 8.5pt; border-radius: 0 4px 4px 0; }
+  .expect { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.15); }
+  .expect .k { font-size: 7pt; text-transform: uppercase; letter-spacing: 1px; color: #95D5B2; font-weight: 700; }
+  .expect .v { font-size: 8.5pt; color: #F1FAF3; }
+
+  .colunas { display: grid; grid-template-columns: 1fr 32%; gap: 14px; margin-top: 10px; }
+  .secao { margin-bottom: 12px; }
+  .secao h2 { font-size: 13pt; color: var(--verde); border-left: 3px solid var(--verde); padding-left: 8px; margin-bottom: 6px; }
+  .cartao { border: 1px solid var(--linha); border-radius: 6px; padding: 10px 12px; background: var(--papel); }
+  .cartao p + p { margin-top: 6px; }
+  .momento { border-left: 3px solid var(--salvia); background: var(--salvia-claro); border-radius: 0 6px 6px 0; padding: 5px 9px; margin-bottom: 5px; }
+  .momento .t { font-size: 7.5pt; font-weight: 700; color: var(--salvia); text-transform: uppercase; letter-spacing: .5px; }
+  .momento ul { margin-left: 14px; }
+  .lado .cartao { margin-bottom: 10px; }
+  .lado h3 { font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; color: var(--verde); border-bottom: 1px solid var(--linha); padding-bottom: 4px; margin-bottom: 6px; }
+  .pilulas span { display: inline-block; background: #F1F3F1; border: 1px solid var(--linha); border-radius: 12px; padding: 1px 8px; margin: 0 3px 4px 0; font-size: 8pt; }
+  .dica { background: var(--terra-claro); border-color: #E7D3C2; }
+  .dica b { color: var(--terra); }
+
+  .caminhos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .caminho { border: 1px solid #E2CDB9; background: var(--terra-claro); border-radius: 6px; padding: 8px 10px; }
+  .caminho .n { color: var(--terra); font-weight: 700; }
+  .caminho .q { font-size: 8pt; color: var(--cinza); font-style: italic; margin: 2px 0 4px; }
+  .rubrica p { margin-top: 4px; }
+  .adapt { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; }
+  .adapt div { font-size: 8.8pt; }
+  .adapt b { display: block; font-size: 7.5pt; text-transform: uppercase; letter-spacing: .6px; color: var(--verde-medio); }
+  .nota { font-size: 8pt; color: var(--cinza); font-style: italic; margin-bottom: 6px; }
+  .gabarito { font-size: 8.8pt; }
+
+  /* Folhas do aluno */
+  .aluno-topo { display: flex; justify-content: space-between; font-size: 9pt; border-bottom: 1.5px solid var(--tinta); padding-bottom: 6px; margin-bottom: 10px; }
+  .aluno-topo .marca { font-size: 7.5pt; color: var(--cinza); text-align: right; }
+  .aluno h1 { font-size: 20pt; color: var(--verde); }
+  .aluno .sub { color: var(--cinza); margin-bottom: 10px; }
+  .resumo { background: var(--salvia-claro); border-radius: 6px; padding: 8px 12px 8px 26px; margin-bottom: 10px; }
+  .resumo li { margin-bottom: 2px; }
+  .missao { border: 1.5px dashed var(--salvia); border-radius: 6px; padding: 8px 12px; margin-bottom: 10px; }
+  .missao b { color: var(--salvia); }
+  .questoes li { margin: 0 0 4px 18px; }
+  .linhas { height: 46px; background: repeating-linear-gradient(to bottom, transparent 0 21px, #C9CFCA 21px 22px); margin: 2px 0 8px; }
+  table.lab { width: 100%; border-collapse: collapse; font-size: 9pt; margin-top: 4px; }
+  table.lab th { background: var(--verde); color: #fff; text-align: left; padding: 5px 6px; font-weight: 500; }
+  table.lab td { border: 1px solid var(--linha); height: 26px; padding: 4px 6px; }
+
+  .adaptada { font-size: 14pt; line-height: 1.5; }
+  .adaptada h1 { font-family: 'DM Sans', Arial, sans-serif; font-weight: 700; font-size: 22pt; text-transform: uppercase; color: var(--tinta); margin-bottom: 8px; }
+  .adaptada .caixa { border: 2px solid var(--tinta); border-radius: 10px; padding: 10px 14px; margin-bottom: 12px; }
+  .adaptada .icone { font-weight: 700; font-size: 11pt; letter-spacing: 1px; }
+  .adaptada img { display: block; width: 92%; margin: 4px auto 10px; }
+  .opcoes { display: flex; gap: 28px; margin: 4px 0 10px 4px; }
+  .opcoes span::before { content: ""; display: inline-block; width: 22px; height: 22px; border: 2px solid var(--tinta); border-radius: 4px; vertical-align: middle; margin-right: 8px; }
+  .simbolo { font-size: 11pt; }
+</style>
+</head>
+<body>
+
+<!-- ============ PLANO DO PROFESSOR — PÁGINA 1 ============ -->
+<section class="pagina">
+  <div class="topo evitar">
+    <div class="rotulo">Plano do professor · Ciências 6º ano · Bloco B01 — Matéria e misturas · Aula 3 de 7</div>
+    <h1>Misturas e fases</h1>
+    <div class="sub">Quantas partes você enxerga?</div>
+    <div class="meta">Código <b>CIE6-B01-A03</b> · Duração: <b>50 min (1 período) · extensível para 2 períodos com o Caminho B</b></div>
+    
+    <div class="bncc"><b>BNCC EF06CI01:</b> Classificar como homogênea ou heterogênea a mistura de dois ou mais materiais (água e sal, água e óleo, água e areia etc.).</div>
+    
+    <div class="expect">
+      <div><div class="k">Saber</div><div class="v">Diferenciar mistura homogênea (uma fase) de mistura heterogênea (duas ou mais fases).</div></div>
+      <div><div class="k">Fazer</div><div class="v">Observar misturas do cotidiano, contar as fases visíveis e classificá-las.</div></div>
+      <div><div class="k">Ser</div><div class="v">Valorizar a observação cuidadosa e o registro como forma de chegar a conclusões.</div></div>
+    </div>
+  </div>
+
+  <div class="colunas">
+    <div>
+      <div class="secao">
+        <h2>1. Para o professor: o essencial</h2>
+        <div class="cartao"><p>Uma mistura é formada por dois ou mais materiais diferentes. Chamamos de fase cada porção da mistura que tem aspecto uniforme, ou seja, que parece igual em todos os pontos quando observamos.</p><p>Na mistura homogênea enxergamos uma única fase: água com sal dissolvido, água com açúcar, vinagre, ar. Na mistura heterogênea enxergamos duas ou mais fases: água e óleo, água e areia, granito (três fases).</p><p>Número de fases não é o mesmo que número de materiais. Água + óleo + areia formam 3 fases. Já água + sal + açúcar, bem dissolvidos, formam 1 fase só.</p><p>A classificação depende do limite de dissolução: se colocarmos sal demais, o excesso se deposita no fundo e a mistura passa a ter 2 fases.</p></div>
+      </div>
+      <div class="secao">
+        <h2>2. Roteiro sugerido</h2>
+        
+        <div class="momento evitar">
+          <div class="t">0–10 min · Gancho</div>
+          <ul><li>Mostre dois copos transparentes com água. Dissolva uma colher de sal em um e coloque óleo no outro.</li><li>Pergunte: &#34;Para onde foi o sal? E por que o óleo não sumiu?&#34; Deixe a turma levantar hipóteses sem corrigir.</li></ul>
+        </div>
+        
+        <div class="momento evitar">
+          <div class="t">10–25 min · Construção</div>
+          <ul><li>Escreva na lousa: MISTURA = 2 ou mais materiais. FASE = cada parte com aspecto igual.</li><li>Volte aos copos e conte as fases com a turma: copo do sal = 1 fase (homogênea); copo do óleo = 2 fases (heterogênea).</li><li>Peça 3 exemplos de casa para cada tipo e anote no quadro.</li></ul>
+        </div>
+        
+        <div class="momento evitar">
+          <div class="t">25–45 min · Prática</div>
+          <ul><li>Distribua as folhas do aluno: a versão convencional e a versão adaptada trabalham o mesmo conteúdo e podem ser usadas na mesma aula.</li><li>Escolha um dos caminhos abaixo conforme o tempo e a turma.</li></ul>
+        </div>
+        
+        <div class="momento evitar">
+          <div class="t">45–50 min · Fechamento</div>
+          <ul><li>Pergunta de saída (ver avaliação). Retome as hipóteses do gancho: o sal não sumiu, ele está dissolvido na água.</li></ul>
+        </div>
+        
+      </div>
+    </div>
+    <aside class="lado">
+      <div class="cartao evitar"><h3>Materiais</h3><div class="pilulas"><span>4 copos transparentes</span><span>Água</span><span>Sal</span><span>Açúcar</span><span>Óleo de cozinha</span><span>Areia</span><span>Colher</span><span>Lápis de cor (azul e amarelo)</span></div></div>
+      <div class="cartao dica evitar"><h3>Dica de sala</h3>
+        <p><b>Erro comum:</b> Achar que o sal &#34;sumiu&#34; ou que toda mistura transparente é água pura.</p>
+        <p style="margin-top:6px"><b>Como corrigir:</b> Prove (com cuidado e higiene) ou deixe a água evaporar num pires ao sol: o sal reaparece. Ele estava ali o tempo todo, dissolvido.</p>
+      </div>
+      <div class="cartao evitar"><h3>Competências gerais</h3><p>CG2 · Pensamento científico, crítico e criativo</p></div>
+      <div class="cartao evitar"><h3>Folhas do aluno</h3>
+        <p><span class="simbolo">●</span> Folha convencional</p>
+        <p><span class="simbolo">◆</span> Folha adaptada</p>
+        <p class="nota" style="margin-top:6px">Mesmo conteúdo, dois níveis. As folhas não trazem a palavra "adaptada": o símbolo identifica a versão só para você.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ PLANO DO PROFESSOR — PÁGINA 2 ============ -->
+<section class="pagina">
+  <div class="secao">
+    <h2>3. Caminhos possíveis: escolha o que cabe na sua semana</h2>
+    <div class="caminhos">
+      
+      <div class="caminho evitar">
+        <div class="n">Caminho A · Expositivo ativo</div>
+        <div class="q">Pouco tempo ou turma numerosa.</div>
+        <div>Demonstração com os dois copos na frente da sala, registro no caderno (Missão do caderno) e questões da folha convencional.</div>
+      </div>
+      
+      <div class="caminho evitar">
+        <div class="n">Caminho B · Laboratório de copos</div>
+        <div class="q">Quando houver 2 períodos ou espaço para grupos.</div>
+        <div>Grupos de 4 preparam 4 copos (água + sal, água + óleo, água + areia, água + açúcar), escrevem uma previsão antes de misturar, observam e preenchem a tabela da folha convencional.</div>
+      </div>
+      
+      <div class="caminho evitar">
+        <div class="n">Caminho C · Prática visual</div>
+        <div class="q">Turma com muitos níveis diferentes ou como retomada.</div>
+        <div>Toda a turma usa a folha adaptada: pinta as fases, marca com X e depois compara com um colega quantas fases encontrou.</div>
+      </div>
+      
+      <div class="caminho evitar">
+        <div class="n">Caminho D · Desafio do cotidiano</div>
+        <div class="q">Para fechar o bloco ou como tarefa de casa.</div>
+        <div>Cartões com fotos de misturas (café coado, salada, suco com polpa, granito, ar, água com gás) para classificar em duas colunas e justificar.</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="secao evitar">
+    <h2>4. Avaliação formativa</h2>
+    <div class="cartao rubrica">
+      <p><b>Pergunta de saída:</b> Um copo tem água, óleo e areia. Quantas fases ele tem? A mistura é homogênea ou heterogênea? Explique.</p>
+      <p>🟢 <b>Pleno:</b> Responde 3 fases, classifica como heterogênea e explica que cada parte tem aspecto diferente.</p>
+      <p>🟡 <b>Parcial:</b> Classifica corretamente como heterogênea, mas erra ou não justifica o número de fases.</p>
+      <p>🔴 <b>Atenção:</b> Confunde número de materiais com número de fases ou diz que é homogênea porque está tudo no mesmo copo.</p>
+    </div>
+  </div>
+
+  <div class="secao evitar">
+    <h2>5. Adaptações</h2>
+    <p class="nota">Foco em remover barreiras, não em diagnóstico: use o que fizer sentido para cada estudante, com ou sem laudo.</p>
+    <div class="cartao adapt">
+      <div><b>TEA</b>Antecipe a sequência da aula em cartões. Use a folha adaptada com a imagem e apenas 2 exemplos (sal e óleo).</div><div><b>TDAH</b>Dê um copo por vez para observar. Ofereça a função de ajudante na demonstração.</div><div><b>Deficiência intelectual</b>Foque em &#34;1 parte&#34; ou &#34;2 partes&#34;. Dispense os termos homogênea e heterogênea na produção escrita; aceite apontar ou pintar.</div><div><b>Deficiência visual</b>Use copos com materiais de texturas diferentes para tocar (areia, óleo). Descreva tudo em voz alta e amplie a folha para A3.</div><div><b>Deficiência auditiva</b>Escreva cada instrução na lousa antes de falar. Use a imagem da folha adaptada como apoio visual.</div><div><b>Dislexia</b>Leia as questões em voz alta. Aceite respostas orais ou desenhadas.</div>
+    </div>
+  </div>
+
+  <div class="secao evitar">
+    <h2>6. Gabarito</h2>
+    <div class="cartao gabarito"><p>1. Homogênea: tem uma única fase.</p><p>2. a) homogênea, 1 fase · b) heterogênea, 2 fases · c) heterogênea, 2 fases · d) homogênea, 1 fase.</p><p>3. 3 fases (água, óleo e areia); heterogênea.</p><p>4. Não. O excesso de sal fica no fundo e a mistura passa a ter 2 fases.</p></div>
+  </div>
+</section>
+
+<!-- ============ FOLHA DO ALUNO ● CONVENCIONAL ============ -->
+<section class="pagina aluno">
+  <div class="aluno-topo">
+    <div>Nome: _______________________________________ Turma: ______ Data: ___/___</div>
+    <div class="marca"><span class="simbolo">●</span> CIE6-B01-A03</div>
+  </div>
+  <h1>Misturas e fases</h1>
+  <div class="sub">Quantas partes você enxerga?</div>
+
+  <ul class="resumo"><li>Mistura é a junção de dois ou mais materiais.</li><li>Fase é cada parte da mistura que tem o mesmo aspecto em todos os pontos.</li><li>Mistura homogênea: tem 1 fase. Exemplo: água com sal dissolvido.</li><li>Mistura heterogênea: tem 2 ou mais fases. Exemplo: água e óleo.</li></ul>
+
+  <div class="missao evitar"><b>Missão do caderno:</b> Transforme seu caderno em uma bancada de laboratório. Desenhe dois copos: no primeiro, água com sal, com uma seta escrita &#34;Mistura homogênea: 1 fase&#34;. No segundo, água embaixo e óleo em cima, com setas indicando &#34;Mistura heterogênea: 2 fases&#34;.</div>
+
+  <ol class="questoes">
+    
+    <li class="evitar">Explique, com suas palavras, o que é uma mistura homogênea.<div class="linhas"></div></li>
+    
+    <li class="evitar">Classifique cada mistura e indique o número de fases: a) água e açúcar dissolvido; b) água e areia; c) água e óleo; d) ar.<div class="linhas"></div></li>
+    
+    <li class="evitar">Um copo tem água, óleo e areia. Quantas fases você enxerga? Que tipo de mistura é essa?<div class="linhas"></div></li>
+    
+    <li class="evitar">Se colocarmos muito sal em um copo de água, a mistura continua homogênea? Explique.<div class="linhas"></div></li>
+    
+  </ol>
+
+  <div class="evitar">
+    <b>Laboratório de copos</b> <span class="nota">(Caminho B)</span>
+    <table class="lab">
+      <tr><th>Mistura</th><th>Minha previsão</th><th>Fases que observei</th><th>Homogênea ou heterogênea?</th></tr>
+      <tr><td>Água + sal</td><td></td><td></td><td></td></tr><tr><td>Água + óleo</td><td></td><td></td><td></td></tr><tr><td>Água + areia</td><td></td><td></td><td></td></tr><tr><td>Água + açúcar</td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ============ FOLHA DO ALUNO ◆ ADAPTADA ============ -->
+<section class="pagina aluno adaptada">
+  <div class="aluno-topo">
+    <div>NOME: ________________________________ TURMA: ______</div>
+    <div class="marca"><span class="simbolo">◆</span> CIE6-B01-A03</div>
+  </div>
+  <h1>Misturas e fases</h1>
+
+  <div class="caixa"><span class="icone">👀 OLHE:</span> ALGUMAS MISTURAS TÊM SÓ 1 PARTE. OUTRAS TÊM 2 PARTES SEPARADAS. OLHE A IMAGEM: O COPO COM ÁGUA E SAL TEM 1 PARTE. O COPO COM ÁGUA E ÓLEO TEM 2 PARTES.</div>
+
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgMzgwIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiI+CiAgPGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+CiAgICA8IS0tIENvcG8gMTogw6FndWEgZSBzYWwgKDEgZmFzZSkgLS0+CiAgICA8cGF0aCBkPSJNNzAgNDAgTDk1IDI5MCBROTcgMzA1IDExMiAzMDUgTDIwOCAzMDUgUTIyMyAzMDUgMjI1IDI5MCBMMjUwIDQwIi8+CiAgICA8ZWxsaXBzZSBjeD0iMTYwIiBjeT0iNDAiIHJ4PSI5MCIgcnk9IjEwIi8+CiAgICA8cGF0aCBkPSJNNzggMTEwIFExNjAgMTI0IDI0MiAxMTAiLz4KICAgIDwhLS0gQ29wbyAyOiDDoWd1YSBlIMOzbGVvICgyIGZhc2VzKSAtLT4KICAgIDxwYXRoIGQ9Ik0zNTAgNDAgTDM3NSAyOTAgUTM3NyAzMDUgMzkyIDMwNSBMNDg4IDMwNSBRNTAzIDMwNSA1MDUgMjkwIEw1MzAgNDAiLz4KICAgIDxlbGxpcHNlIGN4PSI0NDAiIGN5PSI0MCIgcng9IjkwIiByeT0iMTAiLz4KICAgIDxwYXRoIGQ9Ik0zNTggMTEwIFE0NDAgMTI0IDUyMiAxMTAiLz4KICAgIDxwYXRoIGQ9Ik0zNjUgMTc1IFE0NDAgMTg5IDUxNSAxNzUiIHN0cm9rZS13aWR0aD0iNCIvPgogICAgCiAgPC9nPgogIDxnIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI3MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPgogICAgPHRleHQgeD0iMTYwIiB5PSIzNDAiPk1JU1RVUkEgSE9NT0fDik5FQTwvdGV4dD4KICAgIDx0ZXh0IHg9IjE2MCIgeT0iMzY0Ij4xIEZBU0U8L3RleHQ+CiAgICA8dGV4dCB4PSI0NDAiIHk9IjM0MCI+TUlTVFVSQSBIRVRFUk9Hw4pORUE8L3RleHQ+CiAgICA8dGV4dCB4PSI0NDAiIHk9IjM2NCI+MiBGQVNFUzwvdGV4dD4KICA8L2c+CiAgPGcgZm9udC1zaXplPSIxMyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+CiAgICA8dGV4dCB4PSIxNjAiIHk9IjIyMCI+w4FHVUEgKyBTQUw8L3RleHQ+CiAgICA8dGV4dCB4PSI0NDAiIHk9IjE0OCI+w5NMRU88L3RleHQ+CiAgICA8dGV4dCB4PSI0NDAiIHk9IjI1MCI+w4FHVUE8L3RleHQ+CiAgPC9nPgo8L3N2Zz4K" alt="">
+
+  <div class="caixa"><span class="icone">🖍️ PINTE:</span> PINTE DE AZUL TODO O COPO COM ÁGUA E SAL. NO COPO COM ÓLEO, PINTE DE AZUL A PARTE DE BAIXO E DE AMARELO A PARTE DE CIMA.</div>
+
+  <div class="caixa evitar">
+    <span class="icone">✏️ MARQUE UM X NA RESPOSTA CERTA:</span>
+    
+    <div style="margin-top:6px">QUANTAS PARTES TEM O COPO COM ÁGUA E SAL?</div>
+    <div class="opcoes"><span>1 PARTE</span><span>2 PARTES</span></div>
+    
+    <div style="margin-top:6px">QUANTAS PARTES TEM O COPO COM ÁGUA E ÓLEO?</div>
+    <div class="opcoes"><span>1 PARTE</span><span>2 PARTES</span></div>
+    
+  </div>
+</section>
+
+</body>
+</html>
